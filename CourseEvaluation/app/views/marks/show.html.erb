@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @mark.score %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @mark.course_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mark.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_mark_path(@mark) %> |
+<%= link_to 'Back', marks_path %>
