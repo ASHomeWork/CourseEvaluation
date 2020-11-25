@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  college_id: 
-  gender_id: 
-  email: MyString
+weijun:
+  name: weijun
+  college: 1
+  gender: 1 
+  email: weijun@123.com
 
-two:
-  name: MyString
-  college_id: 
-  gender_id: 
-  email: MyString
+zhujiaxin:
+  name: zhujiaxin
+  college: 1
+  gender: 1
+  email: zhujiaxin@123.com
