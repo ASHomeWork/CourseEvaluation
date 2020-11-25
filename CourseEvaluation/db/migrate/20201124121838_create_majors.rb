@@ -7,4 +7,8 @@ class CreateMajors < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+
+  def self.down
+    drop_table :majors
+  end
 end
