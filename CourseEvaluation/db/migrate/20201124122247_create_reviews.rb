@@ -8,4 +8,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+
+  def self.down
+    drop_table :reviews
+  end
 end

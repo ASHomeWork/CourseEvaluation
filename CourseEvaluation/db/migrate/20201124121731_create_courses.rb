@@ -8,4 +8,8 @@ class CreateCourses < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+
+  def self.down
+    drop_table :courses
+  end
 end

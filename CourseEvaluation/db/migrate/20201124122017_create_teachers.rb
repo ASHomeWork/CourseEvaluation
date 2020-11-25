@@ -9,4 +9,8 @@ class CreateTeachers < ActiveRecord::Migration[6.0]
       t.timestamps
     end
   end
+
+  def self.down
+    drop_table :teachers
+  end
 end
