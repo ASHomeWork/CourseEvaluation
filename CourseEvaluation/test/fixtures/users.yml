@@ -1,15 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_name: MyString
-  password: MyString
-  email: MyString
+tanglei:
+  user_name: tanglei
+  password: tanglei
+  email: tanglei@123.com
   power: 1
-  gender_id: 
+  gender: 1
 
-two:
-  user_name: MyString
-  password: MyString
-  email: MyString
+fengxiaoyan:
+  user_name: fengxiaoyan
+  password: fengxiaoyan
+  email: fengxiaoyan@123.com
   power: 1
-  gender_id: 
+  gender: 2
+
+chenxingchen:
+  user_name: chenxingchen
+  password: chenxingchen
+  email: chenxingchen@123.com
+  power: 1
+  gender: 1
+
+baoxu:
+  user_name: baoxu
+  password: baoxu
+  email: baoxu@123.com
+  power: 1
+  gender: 2
+
+fangxiang:
+  user_name: fangxiang
+  password: fangxiang
+  email: fangxiang@123.com
+  power: 1
+  gender: 1
