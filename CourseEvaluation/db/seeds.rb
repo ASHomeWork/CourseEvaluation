@@ -19,9 +19,11 @@ colleges=College.create([{name: 'Computer Science'}])
 
 majors=Major.create([{name: 'Software Engineering', college: colleges.first}])
 
-courses=Course.create([{name: 'Advanced Software Engineering', major: majors.first, year: Date.today}])
-
 teachers=Teacher.create([{name: 'WeiJun', college: colleges.first, gender: genders.first, email:'weijun@123.com'}])
+
+courses=Course.create([{name: 'Advanced Software Engineering', major: majors.first, teacher: teachers.first, year: Date.today},
+    {name: 'Software Engineering', major: majors.first, teacher: teachers.first, year: Date.today},
+    {name: 'Engineering', major: majors.first, teacher: teachers.first, year: Date.today}])
 
 comments=Comment.create([{content: 'I love it', user: users.second, course: courses.first}])
 

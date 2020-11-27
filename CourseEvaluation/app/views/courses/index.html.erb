@@ -8,16 +8,20 @@
       <th>Name</th>
       <th>Major</th>
       <th>Year</th>
+      <th>College</th>
+      <th>Teacher</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @courses.each do |course| %>
+    <% @course.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= course.major_id %></td>
+        <td><%= course.major.name %></td>
         <td><%= course.year %></td>
+        <td><%= course.major.college.name %></td>
+        <td><%= course.teacher.name %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
