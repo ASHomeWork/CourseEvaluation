@@ -31,10 +31,12 @@ ActiveRecord::Schema.define(version: 2020_11_24_122350) do
   create_table "courses", force: :cascade do |t|
     t.string "name", null: false
     t.integer "major_id", null: false
+    t.integer "teacher_id", null: false
     t.date "year", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["major_id"], name: "index_courses_on_major_id"
+    t.index ["teacher_id"], name: "index_courses_on_teacher_id"
   end
 
   create_table "genders", force: :cascade do |t|
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_122350) do
   add_foreign_key "comments", "courses"
   add_foreign_key "comments", "users"
   add_foreign_key "courses", "majors"
+  add_foreign_key "courses", "teachers"
   add_foreign_key "grades", "courses"
   add_foreign_key "grades", "users"
   add_foreign_key "majors", "colleges"

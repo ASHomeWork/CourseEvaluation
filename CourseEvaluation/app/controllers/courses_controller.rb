@@ -4,7 +4,10 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    unless params[:q].blank?
+      @q = Course.ransack(params[:q])
+      @course = @q.result.includes(:major, :teacher)
+    end
   end
 
   # GET /courses/1
@@ -21,6 +24,10 @@ class CoursesController < ApplicationController
   def edit
   end
 
+  def search
+    index
+    render :index
+  end
   # POST /courses
   # POST /courses.json
   def create
