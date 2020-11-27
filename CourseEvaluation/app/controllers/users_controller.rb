@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user.power = 1
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to root_url, notice: '创建用户成功.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -56,9 +56,16 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    #@user = User.find_by(email: params[:email])
     if current_user.power == 2 && current_user == @user
       respond_to do |format|
-        format.html { redirect_to users_url, notice: '不允许删除当前用户' }
+        format.html { redirect_to users_url, notice: '非法删除操作' }
+        format.json { head :no_content }
+      end
+    elsif current_user.power == 1
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to root_url, notice: '注销成功' }
         format.json { head :no_content }
       end
     else

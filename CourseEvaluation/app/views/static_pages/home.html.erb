@@ -9,11 +9,10 @@
 <% end %>
 </div>
 <p>Todo4:实现信息展示</p>
-
-form_for courses
-
-
 <p>Todo5:其他</p>
+<% if !@user.nil? %>
+  <%= link_to '用户资料页', @user %>
+<% end %>
 <div class="container">
   <nav>
     <ul class="nav navbar-nav navbar-right">
