@@ -16,15 +16,21 @@
       <tr>
         <td><%= user.user_name %></td>
         <td><%= user.email %></td>
-        <td><%= "普通用户" if user.power == 1 %></td>
-        <td><%= "管理员" if user.power == 2 %></td>
-        <td><%= "男" if user.gender_id == 1 %></td>
-        <td><%= "女" if user.gender_id == 2 %></td>
+        <% if user.power == 1 %>
+          <td><%= "普通用户" %></td>
+        <% else %>
+          <td><%= "管理员" %></td>
+        <% end %>
+        <% if user.gender_id == 1%>
+          <td><%= "男" %></td>
+        <% else %>
+          <td><%= "女" %></td>
+        <% end %>
         <td><%= link_to '用户资料页', user %></td>
         <td><%= link_to '编辑', edit_user_path(user) %></td>
-        <% if user.power == 1 %>
+        <%-# if user.power == 1 #%>
           <td><%= link_to '删除', user, method: :delete, data: { confirm: '确定删除?' } %></td>
-        <% end %>
+        <%-# end #%>
       </tr>
     <% end %>
   </tbody>

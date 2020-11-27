@@ -34,6 +34,12 @@ module SessionsHelper
             else
                 return nil
             end
+        else
+            if @current_user.nil?
+                return nil
+            else
+                return @current_user
+            end
         end
     end
 
