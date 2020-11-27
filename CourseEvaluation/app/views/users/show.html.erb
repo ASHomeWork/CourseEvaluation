@@ -3,7 +3,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for(@user) %>
+        <%= image_tag("pic1.jpg") %>
         <%= @user.user_name %>
       </h1>
     </section>
@@ -24,8 +24,8 @@
 
 <p>
   <strong>用户权限:</strong>
-  <%= "用户" if @user.power==0 %>
-  <%= "管理员" if @user.power==1 %>
+  <%= "用户" if @user.power==1 %>
+  <%= "管理员" if @user.power==2 %>
 </p>
 
 <p>
@@ -33,6 +33,9 @@
   <%= "男" if @user.gender_id==1 %>
   <%= "女" if @user.gender_id==2 %>
 </p>
-
-<%= link_to '修改资料', edit_user_path(@user) %> |
+<% if @user.power == 2 %>
+  <%= link_to "查看所有用户资料",   users_url %>
+<% end %>
+<%= link_to '注销用户', @user, method: :delete, data: { confirm: '确定删除?' } %>
+<%= link_to '修改个人资料', edit_user_path(@user) %> |
 <%= link_to '退出登录', '/logout' %>
