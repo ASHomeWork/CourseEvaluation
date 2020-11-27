@@ -2,16 +2,6 @@
 <%= link_to '注册', new_user_path %>
 <%= link_to '登录', login_path %>
 <div class="container">
-<<<<<<< HEAD
-  <%= form_with(url: "", method: "get") do %>
-    <%= label_tag(:q, "搜索您想查看的课程") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("搜索") %>
-  <% end %>
-</div>
-<p>Todo4:实现信息展示</p>
-
-=======
   <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
     <%= f.label :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
     <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
@@ -19,11 +9,6 @@
 <% end %>
 </div>
 <p>Todo4:实现信息展示</p>
-
-form_for courses
-
-
->>>>>>> 8f8ec1973ad51084ddc03dc1bb9f6d159d864c9e
 <p>Todo5:其他</p>
 <div class="container">
   <nav>
