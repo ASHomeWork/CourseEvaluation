@@ -1,5 +1,11 @@
 class StaticPagesController < ApplicationController
+  include SessionsHelper
   def home
+    if !current_user.nil?
+      @user = current_user
+    else
+      @user = nil
+    end
   end
 
   def help
