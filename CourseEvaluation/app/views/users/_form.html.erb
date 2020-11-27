@@ -12,31 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_name %>
+    <%= form.label :user_name, "用户名" %>
     <%= form.text_field :user_name %>
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label :password, "密码" %>
     <%= form.text_field :password %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+  <%= form.label :password_confirmation, "确认密码" %>
+  <%= form.text_field :password_confirmation %>
+</div>
+
+  <div class="field">
+    <%= form.label :email, "邮箱" %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :power %>
-    <%= form.number_field :power %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender_id %>
-    <%= form.text_field :gender_id %>
+    <%= form.select(:gender_id, [['男',1], ['女',2]], {:selected => (@user.gender_id)}) %></br>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "提交" %>
   </div>
 <% end %>

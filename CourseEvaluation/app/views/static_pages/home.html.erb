@@ -1,0 +1,22 @@
+<h1>果仁网</h1>
+<%= link_to '注册', new_user_path %>
+<%= link_to '登录', login_path %></br>
+<div class="container">
+  <%= form_with(url: "/search", method: "get") do %>
+    <%= label_tag(:q, "搜索您想查看的课程") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("搜索") %>
+  <% end %>
+</div>
+<p>Todo4:实现信息展示</p>
+<p>Todo5:其他</p>
+<div class="container">
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "首页",   '/' %></li>
+      <li><%= link_to "帮助",   '/help' %></li>
+      <li><%= link_to "关于",  '/about' %></li>
+      <li><%= link_to "联系方式", '/contact' %></li>
+    </ul>
+  </nav>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_122350) do
+ActiveRecord::Schema.define(version: 2020_11_27_062231) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name", null: false
@@ -102,12 +102,13 @@ ActiveRecord::Schema.define(version: 2020_11_24_122350) do
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", null: false
-    t.string "password", limit: 128, null: false
+    t.string "password_digest", null: false
     t.string "email", null: false
     t.integer "power", null: false
     t.integer "gender_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
     t.index ["gender_id"], name: "index_users_on_gender_id"
   end
 

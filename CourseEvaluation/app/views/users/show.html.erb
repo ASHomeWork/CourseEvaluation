@@ -1,29 +1,38 @@
+<% provide(:title, @user.user_name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for(@user) %>
+        <%= @user.user_name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User name:</strong>
+  <strong>用户名:</strong>
   <%= @user.user_name %>
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Email:</strong>
+  <strong>邮箱:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Power:</strong>
-  <%= @user.power %>
+  <strong>用户权限:</strong>
+  <%= "用户" if @user.power==0 %>
+  <%= "管理员" if @user.power==1 %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
-  <%= @user.gender_id %>
+  <strong>性别:</strong>
+  <%= "男" if @user.gender_id==1 %>
+  <%= "女" if @user.gender_id==2 %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to '修改资料', edit_user_path(@user) %> |
+<%= link_to '退出登录', '/logout' %>
