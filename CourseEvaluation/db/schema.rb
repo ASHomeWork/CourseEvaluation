@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_122350) do
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", null: false
-    t.string "password", limit: 128, null: false
+    t.string "password_digest", null: false
     t.string "email", null: false
     t.integer "power", null: false
     t.integer "gender_id", null: false

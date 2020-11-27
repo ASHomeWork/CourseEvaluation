@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'bcrypt'
+include ActiveModel
+cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+password_admin = BCrypt::Password.create('admin', cost: cost)
+password_student = BCrypt::Password.create('student', cost: cost)
+
+genders = Gender.create([{name: 'male'},{name: 'female'}])
+users=User.create([{user_name: 'admin', password_digest: password_admin, email: 'admin@123.com', power: 2, gender: genders.first},
+                   {user_name: 'student', password_digest: password_student, email: 'student@123.com', power: 1, gender: genders.first}])
+
+colleges=College.create([{name: 'Computer Science'}])
+
+majors=Major.create([{name: 'Software Engineering', college: colleges.first}])
+
+courses=Course.create([{name: 'Advanced Software Engineering', major: majors.first, year: Date.today}])
+
+teachers=Teacher.create([{name: 'WeiJun', college: colleges.first, gender: genders.first, email:'weijun@123.com'}])
+
+comments=Comment.create([{content: 'I love it', user: users.first, course: courses.first}])
+
+reviews=Review.create([{content: 'Agreed!', comment: comments.first, user: users.first}])
+
+grades=Grade.create([{course: courses.first, user: users.first, year: Date.today}])
+
+marks=Mark.create([{score: 5, course: courses.first, user:users.first}])
+
+messages=Message.create([{content: 'Welcome!', from_id: 1, to_id: 2}])
