@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   get '/login',     to: 'sessions#new'
   post '/login',    to: 'sessions#create'
   get '/logout',    to: 'sessions#destroy'
+  get '/search',   to: 'courses#index'
 
+  resources :courses do
+    collection do
+      match 'search' => 'courses#search', via: [:get, :post], as: :search
+    end
+  end
   resources :grades
   resources :reviews
   resources :marks
