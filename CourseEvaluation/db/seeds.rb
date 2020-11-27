@@ -12,9 +12,9 @@ password_admin = BCrypt::Password.create('admin', cost: cost)
 password_student = BCrypt::Password.create('student', cost: cost)
 
 genders = Gender.create([{name: 'male'},{name: 'female'}])
-users=User.create([{user_name: 'admin', password_digest: password_admin, email: 'admin@123.com', power: 2, gender: genders.first},
-                   {user_name: 'student', password_digest: password_student, email: 'student@123.com', power: 1, gender: genders.first}])
-
+users=User.create([{user_name: 'admin', password: 'admin', password_confirmation:'admin', email: 'admin@123.com', power: 2, gender: genders.first},
+    {user_name: 'student', password: 'student', password_confirmation:'student', email: 'student@123.com', power: 1, gender: genders.second}])
+    
 colleges=College.create([{name: 'Computer Science'}])
 
 majors=Major.create([{name: 'Software Engineering', college: colleges.first}])
@@ -23,12 +23,12 @@ courses=Course.create([{name: 'Advanced Software Engineering', major: majors.fir
 
 teachers=Teacher.create([{name: 'WeiJun', college: colleges.first, gender: genders.first, email:'weijun@123.com'}])
 
-comments=Comment.create([{content: 'I love it', user: users.first, course: courses.first}])
+comments=Comment.create([{content: 'I love it', user: users.second, course: courses.first}])
 
-reviews=Review.create([{content: 'Agreed!', comment: comments.first, user: users.first}])
+reviews=Review.create([{content: 'Agreed!', comment: comments.first, user: users.second}])
 
-grades=Grade.create([{course: courses.first, user: users.first, year: Date.today}])
+grades=Grade.create([{course: courses.first, user: users.second, year: Date.today}])
 
-marks=Mark.create([{score: 5, course: courses.first, user:users.first}])
+marks=Mark.create([{score: 5, course: courses.first, user:users.second}])
 
 messages=Message.create([{content: 'Welcome!', from_id: 1, to_id: 2}])
