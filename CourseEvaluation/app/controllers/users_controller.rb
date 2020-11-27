@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+  include SessionsHelper
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
   end
 
   # GET /users/1
@@ -19,13 +20,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find_by(id: params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.power = 0
+    @user.power = 1
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -54,10 +56,17 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.power == 2 && current_user == @user
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: '不允许删除当前用户' }
+        format.json { head :no_content }
+      end
+    else
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: '删除用户成功' }
+        format.json { head :no_content }
+      end
     end
   end
 
