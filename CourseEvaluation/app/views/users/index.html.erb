@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>用户资料页</h1>
-
 <table>
   <thead>
     <tr>
@@ -13,7 +12,6 @@
     </tr>
   </thead>
   <tbody>
-    <%= will_paginate %>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.user_name %></td>
@@ -29,9 +27,9 @@
         <% end %>
       </tr>
     <% end %>
-    <%= will_paginate %>
   </tbody>
 </table>
+<%= paginate @users %>
 
 <br>
 
