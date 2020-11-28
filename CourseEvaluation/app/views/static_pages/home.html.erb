@@ -1,12 +1,39 @@
+
+
 <h1>果仁网</h1>
 <%= link_to '注册', new_user_path %>
 <%= link_to '登录', login_path %>
 <div class="container">
   <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
-    <%= f.label :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
+    <%= f.label "搜一下想看的课程叭" %>
     <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
-  <%= f.submit "search" %>
+  <%= f.submit "搜索" %>
 <% end %>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>   
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="assets/ucas1.jpg" alt="First slide">
+        </div>
+        <div class="item">
+            <img src="assets/ucas2.jpg" alt="Second slide">
+        </div>
+        <div class="item">
+            <img src="assets/ucas3.ipg" alt="Third slide">
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel"  roll="button"
+       data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+    <a class="carousel-control right" href="#myCarousel"  roll="button"
+       data-slide="next">&rsaquo;</a>
 </div>
 <p>Todo4:实现信息展示</p>
 <p>Todo5:其他</p>
