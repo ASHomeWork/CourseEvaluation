@@ -4,10 +4,11 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    unless params[:q].blank?
+    if !params[:q].blank?
       @q = Course.ransack(params[:q])
       @course = @q.result.includes(:major, :teacher)
     end
+    
   end
 
   # GET /courses/1
@@ -76,6 +77,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, :major_id, :year)
+      params.require(:course).permit(:name, :major_id, :year, :teacher_id)
     end
 end

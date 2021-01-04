@@ -13,23 +13,30 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
-    <% @course.each do |course| %>
-      <tr>
-        <td><%= course.name %></td>
-        <td><%= course.major.name %></td>
-        <td><%= course.year %></td>
-        <td><%= course.major.college.name %></td>
-        <td><%= course.teacher.name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if !@course.nil? %>
+      <% @course.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= course.major.name %></td>
+          <td><%= course.year %></td>
+          <td><%= course.major.college.name %></td>
+          <td><%= course.teacher.name %></td>
+          <td><%= link_to 'Show', course %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
+<% if !@course.nil? %>
+  <% if @course.empty? %>
+    <p>没找到您输入的课程信息，请换个关键词试试！</p>
+  <% end %>
+<% end %>
 <br>
 
 <%= link_to 'New Course', new_course_path %>
+<%= link_to 'Back', '/' %>

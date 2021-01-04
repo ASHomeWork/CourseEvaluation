@@ -1,0 +1,19 @@
+<% provide(:title, @user.user_name) %>
+<div align="right">
+    <%= image_tag("pic1.jpg") %>
+    <%= @user.user_name %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>用户名:</strong>
+  <%= @user.user_name %>
+</p>
+
+<p>
+  <strong>邮箱:</strong>
+  <%= @user.email %>
+  <li><%= link_to "资料详情",   @user %></li>
+  <li><%= link_to "退出登录",   '/logout' %></li>
+</p>
