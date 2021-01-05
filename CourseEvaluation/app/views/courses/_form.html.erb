@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :college_id %>
+    <%= form.collection_select :college_id, College.order(:name), :id, :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :major_id %>
-    <%= form.text_field :major_id %>
+    <%= form.collection_select :major_id, Major.order(:name), :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :teacher_id %>
-    <%= form.text_field :teacher_id %>
+    <%= form.collection_select :teacher_id, Teacher.order(:name), :id, :name %>
   </div>
 
   <div class="field">

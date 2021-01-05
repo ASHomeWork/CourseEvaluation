@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  protect_from_forgery except: :home
   include SessionsHelper
   def home
     if !current_user.nil?
