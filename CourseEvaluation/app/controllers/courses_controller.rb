@@ -9,6 +9,8 @@ class CoursesController < ApplicationController
     if !params[:q].blank?
       @q = Course.ransack(params[:q])
       @course = @q.result.includes(:major, :teacher)
+    else
+      @course = Course.all
     end
     
   end
