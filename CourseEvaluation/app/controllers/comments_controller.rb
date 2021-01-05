@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
+    if
     @comments = Comment.all
   end
 
