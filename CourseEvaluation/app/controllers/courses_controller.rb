@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @comment=Comment.where(:course => @course)
   end
 
   def select_with_ajax

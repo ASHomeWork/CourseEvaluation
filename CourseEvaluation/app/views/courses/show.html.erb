@@ -16,4 +16,62 @@
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_url %>
+<%= link_to 'Back', courses_path %>
+<%=  @comment.each do |c| %>
+<div>
+<p><%= "用户:"+c.user.user_name %></p>
+<p><%= "内容:"+c.content%></p>
+</div>
+<%end%>
+<table class="card-table table" >
+  <tbody>
+    <% if !@comment.nil? %>
+      <% @comment.each do |comment| %>
+        <tr>
+          <td><%= "用户名:"+comment.user.user_name %></td>
+          <td><%= "内容:"+comment.content %></td>
+        </tr>
+
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">发布帖子</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form">
+			<!---隐藏的用户名-->
+			<div class="form-group">
+		<div class="col-xs-12">
+			<input type="text" class="form-control" id="username" 
+				   placeholder="用户名">
+		</div>
+	</div>
+	<!---隐藏的用户名-->
+	<div class="form-group">
+		<div class="col-xs-12">
+			<input type="text" class="form-control" id="titlename" 
+				   placeholder="请输入标题">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-12">
+			<textarea class="form-control" rows="3" placeholder="请输入内容" id="content"></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-6" >
+			<button type="button" class="btn btn-success" onclick="showAction();" style="margin-top:100px">上传图片</button>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-xs-10">
+			<button type="submit" class="btn btn-primary">发布帖子</button>
+		</div>
+	</div>
+</form>
+    </div>
+</div>
