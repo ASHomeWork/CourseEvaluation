@@ -20,16 +20,24 @@
     <%= form.label :college_id %>
     <%= form.collection_select :college_id, College.order(:name), :id, :name %>
   </div>
-
+  <% if !current_user.nil? && current_user.power == 2 %>
+    <%= link_to '添加学院', new_college_path %>
+  <% end %>
   <div class="field">
     <%= form.label :major_id %>
     <%= form.collection_select :major_id, Major.order(:name), :id, :name %>
   </div>
+  <% if !current_user.nil? && current_user.power == 2 %>
+    <%= link_to '添加专业', new_major_path %>
+  <% end %>
 
   <div class="field">
     <%= form.label :teacher_id %>
     <%= form.collection_select :teacher_id, Teacher.order(:name), :id, :name %>
   </div>
+  <% if !current_user.nil? && current_user.power == 2 %>
+    <%= link_to '添加老师', new_teacher_path %>
+  <% end %>        
 
   <div class="field">
     <%= form.label :year %>

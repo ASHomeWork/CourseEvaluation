@@ -1,14 +1,15 @@
 
 <html>
 
-<h1>果仁网</h1>
+<h1 align="left">果仁网</h1>
+<h2 align="left">www.guoren.com</h2>
 <body>
 <div align="right">
 <% if current_user.nil? %>
   <%= link_to '注册', new_user_path %>
   <%= link_to '登录', login_path %>
 <% end %>
-<% if !current_user.nil? %>
+<% if !current_user.nil? %>ra
   <%= render "partial" %>
 <% end %>
 </div>
