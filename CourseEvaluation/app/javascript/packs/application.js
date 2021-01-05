@@ -16,3 +16,35 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap'
+
+$(document).on('turbolinks:load', function(){
+    $("#course_college_id").change(function(){
+        //$("#major_majorID").html("<select name='major' id='major'></select>");
+        $.post( 
+            "select_with_ajax",
+            {"selected1":$("#course_college_id").val()},
+            function(data){
+                $("#course_major_id").empty();
+                var datas = eval(data);
+                $.each(datas,function(i){
+                    $("#course_major_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
+            });	    
+        });
+    });
+});
+
+$(document).on('turbolinks:load', function(){
+    $("#course_college_id").change(function(){
+        //$("#major_majorID").html("<select name='major' id='major'></select>");
+        $.post( 
+            "select_with_ajax1",
+            {"selected2":$("#course_college_id").val()},
+            function(data){
+                $("#course_teacher_id").empty();
+                var datas = eval(data);
+                $.each(datas,function(i){
+                    $("#course_teacher_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
+            });	    
+        });
+    });
+});

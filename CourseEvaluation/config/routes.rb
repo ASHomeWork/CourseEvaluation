@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post '/login',    to: 'sessions#create'
   get '/logout',    to: 'sessions#destroy'
   get '/search',   to: 'courses#index'
+  post '/courses/select_with_ajax', to: 'courses#select_with_ajax'
+  post '/courses/select_with_ajax1', to: 'courses#select_with_ajax1'
 
   resources :courses do
     collection do
