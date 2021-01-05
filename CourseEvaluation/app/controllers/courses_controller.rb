@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   include CoursesHelper
-  skip_before_action :verify_authenticity_token, :only => [:select_with_ajax]
+  skip_before_action :verify_authenticity_token, :only => [:select_with_ajax1, :select_with_ajax]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   # GET /courses
