@@ -20,7 +20,7 @@
           <td><%= link_to course.name , course%></td>
           <td><%= course.major.name %></td>
           <td><%= course.year %></td>
-          <td><%= link_to course.major.college.name%></td>
+          <td><%= course.major.college.name%></td>
           <td><%= link_to course.teacher.name , course.teacher%></td>
           <% if !current_user.nil? && current_user.power == 2%>
             <td><%= link_to '编辑课程', edit_course_path(course) %></td>

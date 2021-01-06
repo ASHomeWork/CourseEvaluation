@@ -9,7 +9,7 @@
   <%= link_to '注册', new_user_path %>
   <%= link_to '登录', login_path %>
 <% end %>
-<% if !current_user.nil? %>ra
+<% if !current_user.nil? %>
   <%= render "partial" %>
   <%= link_to '消息', messages_path %>
 <% end %>
