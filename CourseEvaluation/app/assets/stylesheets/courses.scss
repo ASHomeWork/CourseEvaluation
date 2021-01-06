@@ -1,6 +1,7 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "font-awesome";
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +24,10 @@ body {
  =======================*/
 }
 .comments-container {
-    margin: 60px auto 15px;
+    margin: 30px auto 15px;
+    padding: 1px;
     width: 768px;
+    overflow: scroll;
 }
 .comments-container h1 {
     font-size: 36px;
@@ -237,4 +240,341 @@ body {
     .reply-list .comment-box {
         width: 320px;
     }
+}
+
+.wrap{
+    width:1500px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#left{
+    position: absolute;
+    width:500px;
+    height:500px;
+    background: #ffffff;
+    float: left;
+}
+#right{
+    margin-left: 500px;
+    height: 500px;
+    background: #ffcccc;
+    float: right;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    text-align: left;
+    font-family: Lato, Arial, sans-serif;
+    color: #070101;
+    background-color: #8572a7;
+    padding: 20px;
+    font-size: 14px;
+}
+.mii-page {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: 0 18px 8px -4px rgba(0, 0, 0, .3);
+}
+.mii-page h1 {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
+    color: #222;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.mii-page h1 small {
+    font-size: 0.7em;
+    color: #666;
+}
+.mii-container {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    box-shadow: 0 8px 3px -3px rgba(0, 0, 0, .3);
+    background-color: #d9d1c6;
+    border-radius: 20px;
+}
+.mii-container-top {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 14px 16px 16px 90px;
+    min-height: 85px;
+}
+.mii-container-top .flag {
+    float: left;
+    width: 50px;
+    height: auto;
+}
+span.mii-name {
+    color: #b78974;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+span.mii-stars {
+    float: right;
+    color: #0db5a2;
+    font-size: 1.4em;
+    font-weight: 900;
+    margin-right: 20px;
+    line-height: 0.8em;
+    overflow: hidden;
+}
+.mii-stars img {
+    display: inline-block;
+    height: 20px;
+    width: auto;
+    padding: 4px 2px 0 0;
+}
+.mii-image {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    width: 60px;
+    height: auto;
+}
+.mii-gold-stars {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 0;
+    clear: both;
+}
+.mii-gold-star {
+    position: absolute;
+    top: 6px;
+    background-image: url('/assets/star.png');
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+}
+.mii-gold-star.first {
+    left: 0;
+}
+.mii-gold-star.second {
+    left: 10px;
+}
+.mii-gold-star.third {
+    left: 20px;
+}
+.mii-gold-star.fourth {
+    left: 40px;
+}
+.mii-gold-star.fifth {
+    left: 40px;
+}
+.mii-gold-star-dots {
+    display: none;
+    position: absolute;
+    left: 64px;
+    line-height: 0;
+    top: 20px;
+    letter-spacing: 6px;
+    color: #d7bdae;
+}
+.mii-container-bottom {
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: #d7bdae;
+    padding: 1px 5px 4px 90px;
+}
+@media screen and (min-width: 265px) {
+    span.mii-name {
+        font-size: 1.8em;
+        line-height: 1.3em;
+    }
+    span.mii-stars {
+        font-size: 2em;
+    }
+    .mii-stars img {
+        height: 27px;
+    }
+}
+@media screen and (min-width: 290px) {
+    .mii-page h1 {
+        font-size: 1.6em;
+    }
+    .mii-container-top {
+        padding-left: 110px;
+    }
+    .mii-container-bottom {
+        padding-left: 110px;
+    }
+    .mii-image {
+        width: 70px;
+        left: 18px;
+    }
+}
+@media screen and (min-width: 325px) {
+    .mii-container-top {
+        padding-left: 140px;
+    }
+    .mii-image {
+        left: 35px;
+    }
+    .mii-container-bottom {
+        padding-left: 140px;
+    }
+}
+@media screen and (min-width: 415px) {
+    .mii-container-top {
+        padding-top: 24px;
+    }
+    .mii-gold-stars {
+        clear: none;
+        margin-left: 20px;
+    }
+    .mii-container-top .flag {
+        width: 80px;
+    }
+    .mii-gold-star {
+        top: 3px;
+        width: 34px;
+        height: 34px;
+    }
+    .mii-gold-star.second {
+        left: 12px;
+    }
+    .mii-gold-star.third {
+        left: 24px;
+    }
+}
+@media screen and (min-width: 515px) {
+    .mii-page h1 {
+        font-size: 3em;
+    }
+    .mii-gold-star-dots {
+        display: block;
+    }
+}
+
+
+body {
+    background-color: lightblue;
+}
+.rating {
+    text-align: center;
+    margin-top: 120px;
+    position: relative;
+    width: 50%;
+    float: left;
+}
+.hidden {
+    opacity: 0;
+}
+.star {
+    display: inline-block;
+    margin: 5px;
+    font-size: 30px;
+    color: whitesmoke;
+    position: relative;
+}
+.star.animate {
+    -webkit-animation: stretch-bounce 0.5s ease-in-out;
+}
+.star.hidden {
+    opacity: 0;
+}
+.full:before {
+    font-family: fontAwesome;
+    display: inline-block;
+    content: "\f005";
+    position: relative;
+    float: right;
+    z-index: 2;
+}
+.half:before {
+    font-family: fontAwesome;
+    content: "\f089";
+    position: absolute;
+    float: left;
+    z-index: 3;
+}
+.star-colour {
+    color: #ffd700;
+}
+@-webkit-keyframes stretch-bounce {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    25% {
+        -webkit-transform: scale(1.5);
+    }
+    50% {
+        -webkit-transform: scale(0.9);
+    }
+    75% {
+        -webkit-transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+.selected:before {
+    font-family: fontAwesome;
+    display: inline-block;
+    content: "\f005";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(1);
+    opacity: 1;
+    z-index: 1;
+}
+.selected.pulse:before {
+    -webkit-transform: scale(3);
+    opacity: 0;
+}
+.selected.is-animated:before {
+    transition: 1s ease-out;
+}
+.score {
+    font-family: arial;
+    font-size: 20px;
+    color: green;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.score-rating {
+    vertical-align: sup;
+    top: -5px;
+    position: relative;
+    font-size: 150%;
+}
+.total {
+    vertical-align: sub;
+    top: 0px;
+    position: relative;
+    font-size: 100%;
+}
+.average {
+    font-family: arial;
+    font-size: 20px;
+    color: indianred;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.average .score-average {
+    padding-top: 30px;
 }
