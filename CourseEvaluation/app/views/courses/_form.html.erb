@@ -18,14 +18,15 @@
 
   <div class="field">
     <%= form.label :college_id %>
-    <%= form.collection_select :college_id, College.order(:name), :id, :name %>
+    <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => true }%>
+    <%= collection_select(:College, :college_id, College.where('id < 1'), :id, :name, {:selected => "whatever_value"}) %>
   </div>
   <% if !current_user.nil? && current_user.power == 2 %>
     <%= link_to 'Add College', new_college_path %>
   <% end %>
   <div class="field">
     <%= form.label :major_id %>
-    <%= form.collection_select :major_id, Major.order(:name), :id, :name %>
+    <%= form.collection_select :major_id, Major.where('id < 1'), :id, :name %>
   </div>
   <% if !current_user.nil? && current_user.power == 2 %>
     <%= link_to 'Add Major', new_major_path %>
