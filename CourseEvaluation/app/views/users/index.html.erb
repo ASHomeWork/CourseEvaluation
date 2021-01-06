@@ -1,36 +1,5 @@
 <% if !current_user.nil?&&current_user[:power]==2 then %>
-<h1>用户资料页</h1>
-<table class="table table-hover" id="course_table" data-card-view="true">
-  <thead>
-    <tr>
-      <th>用户id</td>
-      <th>用户名</th>
-      <th>邮箱</th>
-      <th>用户权限</th>
-      <th>性别</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= link_to user.user_name,user %></td>
-        <td><%= user.email %></td>
-        <% if user.power == 1 %>
-          <td><%= "普通用户" %></td>
-        <% else %>
-          <td><%= "管理员" %></td>
-        <% end %>
-        <% if user.gender_id == 1%>
-          <td><%= "男" %></td>
-        <% else %>
-          <td><%= "女" %></td>
-        <% end %>
-        <% if current_user.power == 2 %>
-          <td><%= link_to '删除', user, method: :delete, data: { confirm: '确定删除?' } %></td>
-        <% end #%>
-=======
+  <h1>用户资料页</h1>
   <p id="notice"><%= notice %></p>
   <h1>用户资料页</h1>
   <table class="table table-hover" id="course_table" data-card-view="true">
@@ -41,7 +10,6 @@
         <th>用户权限</th>
         <th>性别</th>
         <th colspan="5"></th>
->>>>>>> fxy
       </tr>
     </thead>
     <tbody>
@@ -69,19 +37,7 @@
     </tbody>
   </table>
   <%= paginate @users %>
-
   <br>
-
-<<<<<<< HEAD
-<%= link_to '首页', '/' %>
-<% if !current_user.nil? %>
-  <%= link_to '点我注册吧!', new_user_path %>
-<% end %>
-<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
-=======
-  <%= link_to '首页', '/' %>
-  <%= link_to '注册', new_user_path %>
 <% else %>
   <%= render "/static_pages/404" %>
 <% end %>
->>>>>>> fxy
