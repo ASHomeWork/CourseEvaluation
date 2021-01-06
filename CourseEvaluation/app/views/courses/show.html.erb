@@ -31,8 +31,8 @@
 				<%= @course.year %>
 				</p>
 
-				<%= link_to 'Edit', edit_course_path(@course) %> |
-				<%= link_to 'Back', courses_path %>
+				<%= link_to '修改课程', edit_course_path(@course) %> |
+				<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
 		</div>
     </div>
 </div>
