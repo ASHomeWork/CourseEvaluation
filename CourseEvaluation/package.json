@@ -1,5 +1,5 @@
 {
-  "name": "CourseEvaluation",
+  "name": "xxx",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
@@ -15,5 +15,16 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
