@@ -17,15 +17,22 @@ users=User.create([{user_name: 'admin', password: 'admin', password_confirmation
     {user_name: 'student2', password: 'student2', password_confirmation:'student2', email: 'student2@123.com', power: 1, gender: genders.second},
     {user_name: 'student3', password: 'student3', password_confirmation:'student3', email: 'student3@123.com', power: 1, gender: genders.second}])
     
-colleges=College.create([{name: 'Computer Science'}])
+colleges=College.create([{name: 'Computer Science'}, {name: 'Mathematical Science'}, {name: 'Physical Science'}])
 
-majors=Major.create([{name: 'Software Engineering', college: colleges.first}])
+majors=Major.create([{name: 'Software Engineering', college: colleges.first}, 
+                     {name: 'Mathematics and Applied Mathematics', college: colleges[1]},
+                     {name: 'Engineering Mechanics', college: colleges[2]}])
 
-teachers=Teacher.create([{name: 'WeiJun', college: colleges.first, gender: genders.first, email:'weijun@123.com'}])
+teachers=Teacher.create([{name: 'WeiJun', college: colleges.first, gender: genders.first, email:'weijun@123.com'},
+                         {name: 'XiNanhua', college: colleges[1], gender: genders.first, email: 'XiNanhua@123.com'},
+                         {name: 'LiuShuxin', college: colleges[2], gender: genders.first, email: 'LiuShuxin@123.com'}])
 
 courses=Course.create([{name: 'Advanced Software Engineering', major: majors.first, teacher: teachers.first, year: Date.today},
     {name: 'Software Engineering', major: majors.first, teacher: teachers.first, year: Date.today},
-    {name: 'Engineering', major: majors.first, teacher: teachers.first, year: Date.today}])
+    {name: 'Engineering', major: majors.first, teacher: teachers.first, year: Date.today},
+    {name: 'Linear Algebra', major: majors[1], teacher: teachers[1], year: Date.today},
+    {name: 'Calculus', major: majors[1], teacher: teachers[1], year: Date.today},
+    {name: 'Mechanics', major: majors[2], teacher: teachers[2], year: Date.today}])
 
 comments=Comment.create([{content: 'I love it', user: users.second, course: courses.first},
                         {content: 'Fantastic!', user: users.last, course: courses.first}])
