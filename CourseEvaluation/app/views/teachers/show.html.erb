@@ -20,5 +20,7 @@
   <%= @teacher.email %>
 </p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<%if !current_user.nil? && current_user.power == 2 %>
+  <%= link_to '修改教师信息', edit_teacher_path(@teacher) %>
+<% end %>
+<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
