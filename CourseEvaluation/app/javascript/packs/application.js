@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap'
+import jquery from 'jquery'
 
 $(document).on('turbolinks:load', function(){
     $("#course_college_id").change(function(){
