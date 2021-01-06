@@ -23,7 +23,35 @@ Rails.application.routes.draw do
     collection do
       match 'search' => 'courses#search', via: [:get, :post], as: :search
     end
+
   end
+
+  resources :users
+  get '/users', to: 'users#index'
+  post '/users', to: 'users#create'
+  patch '/users/:id', to: 'users#update'
+  put '/users/:id', to: 'users#update'
+  delete '/users/:id', to:'users#destroy'
+
+  resources :new_user
+  get 'users/new', to: 'users#new'
+
+  resources :edit_user
+  get '/users/:id/edit', to: 'users#edit'
+
+  resources :teachers
+  get '/teachers', to: 'teachers#index'
+  post '/teachers', to: 'teachers#create'
+  patch '/teachers/:id', to: 'teachers#update'
+  put '/teachers/:id', to: 'teachers#update'
+  delete '/teachers/:id', to:'teachers#destroy'
+
+  resources :new_teacher
+  get 'teachers/new', to: 'teachers#new'
+
+  resources :edit_teacher
+  get '/teachers/:id/edit', to: 'teachers#edit'
+
   resources :grades
   resources :reviews
   resources :marks
@@ -35,5 +63,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :messages
   resources :users
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

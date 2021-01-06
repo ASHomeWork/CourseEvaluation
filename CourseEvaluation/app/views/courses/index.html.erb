@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Courses</h1>
-
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,12 +17,11 @@
     <% if !@course.nil? %>
       <% @course.each do |course| %>
         <tr>
-          <td><%= course.name %></td>
+          <td><%= link_to course.name , course%></td>
           <td><%= course.major.name %></td>
           <td><%= course.year %></td>
           <td><%= course.major.college.name %></td>
           <td><%= course.teacher.name %></td>
-          <td><%= link_to 'Show', course %></td>
           <td><%= link_to 'Edit', edit_course_path(course) %></td>
           <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
