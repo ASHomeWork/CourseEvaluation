@@ -12,21 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :内容 %>
     <%= form.text_field :content %>
   </div>
 
   <div class="field">
-    <%= form.label :from %>
-    <%= form.number_field :from %>
-  </div>
-
-  <div class="field">
-    <%= form.label :to %>
-    <%= form.number_field :to %>
+    <%= form.label :收件人id %>
+    <%= form.number_field :to_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "发送" %>
   </div>
 <% end %>

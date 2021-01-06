@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  include SessionsHelper
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
@@ -25,6 +26,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message.from_id = 1
 
     respond_to do |format|
       if @message.save
@@ -69,6 +71,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.require(:message).permit(:content, :from, :to)
+      params.require(:message).permit(:content, :from_id, :to_id)
     end
 end

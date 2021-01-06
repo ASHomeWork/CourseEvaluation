@@ -11,6 +11,7 @@
 <% end %>
 <% if !current_user.nil? %>ra
   <%= render "partial" %>
+  <%= link_to '消息', messages_path %>
 <% end %>
 </div>
 <div class="container">
