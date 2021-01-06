@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function(){
             {"selected1":$("#course_college_id").val()},
             function(data){
                 $("#course_major_id").empty();
+                $("#course_teacher_id").append("<option value='"+0+"'>"+"请选择"+"</option>");
                 var datas = eval(data);
                 $.each(datas,function(i){
                     $("#course_major_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
@@ -42,11 +43,20 @@ $(document).on('turbolinks:load', function(){
             {"selected2":$("#course_college_id").val()},
             function(data){
                 $("#course_teacher_id").empty();
+                $("#course_teacher_id").append("<option value='"+0+"'>"+"请选择"+"</option>");
                 var datas = eval(data);
                 $.each(datas,function(i){
                     $("#course_teacher_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
             });	    
         });
+    });
+});
+
+$(document).on('turbolinks:load', function(){
+    $('[title ="new2"]').click(function(e){
+        //$("#major_majorID").html("<select name='major' id='major'></select>");
+        alert("请登陆后尝试！");
+        e.preventDefault();
     });
 });
 
