@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/search',   to: 'courses#index'
   post '/courses/select_with_ajax', to: 'courses#select_with_ajax'
   post '/courses/select_with_ajax1', to: 'courses#select_with_ajax1'
+  post '/courses/select_with_logged', to: 'courses#select_with_logged'
+  get '/select_with_logged', to: 'courses#select_with_logged'
 
   resources :courses do
     collection do

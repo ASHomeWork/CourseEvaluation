@@ -37,6 +37,9 @@
   <% end %>
 <% end %>
 <br>
-
-<%= link_to 'New Course', new_course_path %>
+<% if current_user!=nil %>
+  <%= link_to "添加课程", {:controller => "courses", :action => "new"}, {:title => "new1"} %>
+<% else %>
+  <%= link_to "添加课程", {:controller => "courses", :action => "new"}, {:title => "new2"} %> 
+<% end %>
 <%= link_to 'Back', '/' %>

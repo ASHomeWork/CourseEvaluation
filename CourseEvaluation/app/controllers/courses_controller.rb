@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   include CoursesHelper
+  include SessionsHelper
   skip_before_action :verify_authenticity_token, :only => [:select_with_ajax1, :select_with_ajax]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
@@ -28,7 +29,12 @@ class CoursesController < ApplicationController
   def select_with_ajax1
     @teachers = College.find_by_id(params[:selected2]).teachers
     render json: @teachers
-end
+  end
+
+  def select_with_logged
+    @current_user = current_user
+    render json: @current_user
+  end
 
   # GET /courses/new
   def new

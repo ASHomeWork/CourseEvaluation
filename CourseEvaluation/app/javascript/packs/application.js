@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap'
+import jquery from 'jquery'
 
 $(document).on('turbolinks:load', function(){
     $("#course_college_id").change(function(){
@@ -46,5 +47,12 @@ $(document).on('turbolinks:load', function(){
                     $("#course_teacher_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
             });	    
         });
+    });
+});
+
+$(document).on('turbolinks:load', function(){
+    $("a[title='new2']").click(function(event){
+        event.preventDefault();
+        alert("请登陆后尝试！");
     });
 });
