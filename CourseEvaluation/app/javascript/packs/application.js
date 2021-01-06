@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', function(){
             {"selected1":$("#course_college_id").val()},
             function(data){
                 $("#course_major_id").empty();
-                $("#course_teacher_id").append("<option value='"+0+"'>"+"请选择"+"</option>");
+                $("#course_major_id").append("<option value='"+0+"'>"+"选择专业"+"</option>");
                 var datas = eval(data);
                 $.each(datas,function(i){
                     $("#course_major_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
@@ -43,7 +43,7 @@ $(document).on('turbolinks:load', function(){
             {"selected2":$("#course_college_id").val()},
             function(data){
                 $("#course_teacher_id").empty();
-                $("#course_teacher_id").append("<option value='"+0+"'>"+"请选择"+"</option>");
+                $("#course_teacher_id").append("<option value='"+0+"'>"+"选择教师"+"</option>");
                 var datas = eval(data);
                 $.each(datas,function(i){
                     $("#course_teacher_id").append("<option value='"+datas[i].id+"'>"+datas[i].name+"</option>");
