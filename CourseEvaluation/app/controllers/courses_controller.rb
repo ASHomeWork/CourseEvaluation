@@ -57,7 +57,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: '课程创建成功' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -101,3 +101,4 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:name, :major_id, :year, :teacher_id)
     end
 end
+ 
