@@ -37,6 +37,18 @@ Rails.application.routes.draw do
   resources :edit_user
   get '/users/:id/edit', to: 'users#edit'
 
+  resources :teachers
+  get '/teachers', to: 'teachers#index'
+  post '/teachers', to: 'teachers#create'
+  patch '/teachers/:id', to: 'teachers#update'
+  put '/teachers/:id', to: 'teachers#update'
+  delete '/teachers/:id', to:'teachers#destroy'
+
+  resources :new_teacher
+  get 'teachers/new', to: 'teachers#new'
+
+  resources :edit_teacher
+  get '/teachers/:id/edit', to: 'teachers#edit'
 
   resources :grades
   resources :reviews
