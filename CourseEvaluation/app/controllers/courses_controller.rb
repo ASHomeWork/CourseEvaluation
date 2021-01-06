@@ -16,6 +16,15 @@ class CoursesController < ApplicationController
     
   end
 
+  def to_review
+    if current_user.nil?
+      flash[:notice] = "请先登录" 
+      redirect_to course_url(params[:id])
+    else
+      flash[:toer] =current_user
+      redirect_to course_path(params[:id])
+    end
+  end
   # GET /courses/1
   # GET /courses/1.json
   def show

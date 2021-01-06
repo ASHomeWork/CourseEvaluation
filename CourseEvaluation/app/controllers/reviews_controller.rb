@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  include SessionsHelper
   # GET /reviews
   # GET /reviews.json
   def index
@@ -21,9 +21,11 @@ class ReviewsController < ApplicationController
   def edit
   end
 
+
   # POST /reviews
   # POST /reviews.json
   def create
+
     @review = Review.new(review_params)
 
     respond_to do |format|
