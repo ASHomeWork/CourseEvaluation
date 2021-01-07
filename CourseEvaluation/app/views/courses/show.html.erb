@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="wrap">
 <aside id="left">
 <div class="mii-page">
@@ -34,7 +33,7 @@
 				</p>
 
 				<%= link_to '修改课程', edit_course_path(@course) %> |
-				<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+				<input type = "submit" class="btn btn-primary btn-xs" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
 		</div>
     </div>
 </div>
@@ -74,7 +73,7 @@
 													<%else%>
 														<div class="modal-body">回复：<%=comment.user.user_name%></div>
 															<%@review = Review.new()%>
-															<%@review.user=comment.user%>
+															<%@review.user=current_user%>
 															<%@review.comment=comment%>
 															<%=render "reviews/form", review: @review %>
 														<div class="modal-footer">
@@ -84,8 +83,6 @@
 												</div><!-- /.modal-content -->
 											</div><!-- /.modal -->
 										</div>
-
-
 
 									</div>
 									<div class="comment-content">
@@ -125,7 +122,7 @@
 																	<%else%>
 																		<div class="modal-body">回复：<%=comment.user.user_name%></div>
 																			<%@review = Review.new()%>
-																			<%@review.user=comment.user%>
+																			<%@review.user=current_user%>
 																			<%@review.comment=comment%>
 																			<%@review.content=review.user.user_name+":"+'"'+review.content+'",'%>
 																			<%=render "reviews/form", review: @review %>
@@ -136,12 +133,6 @@
 																</div><!-- /.modal-content -->
 															</div><!-- /.modal -->
 														</div>
-
-
-
-
-
-
 
 													</div>
 													<div class="comment-content">
@@ -160,13 +151,23 @@
 </div>
 </section>
 </div>
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+
+
 <div class="panel panel-success">
-    <div class="panel-heading">
+	<div class="panel-heading">
         <h3 class="panel-title">发表评论</h3>
     </div>
+	<div class="panel-body">
+<%= form_for Comment.new,url: "/courses/create_comment" do |form| %>
 	<div class="form-group">
 		<div class="col-xs-12">
-			<textarea class="form-control" rows="3" placeholder="请输入内容" id="content"></textarea>
+			<textarea type="text" class="form-control" rows="3" name="content" placeholder="写下你的评论..." class="comment-text"></textarea>
 		</div>
 	</div>
 	<div class="form-group">
@@ -176,11 +177,11 @@
 	</div>
 	<div class="form-group">
 		<div class="col-xs-10">
-			<button type="submit" class="btn btn-primary">发布帖子</button>
+			<input type="submit" value="发布" class="submit-issue-button btn btn-primary">
 		</div>
 	</div>
-</form>
-    </div>
+	<input type="hidden" class="form-control"  name="course_id" value="<%=@course.id%>">
+<% end %>
 </div>
 <div class="rating" data-vote="0">
 
@@ -234,4 +235,5 @@
         <span>/</span>
         <span class="total">5</span>
     </div>
+</div>
 </div>
