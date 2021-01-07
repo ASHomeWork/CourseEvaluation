@@ -347,3 +347,107 @@ body {
     width:500px; 
     text-align:center; 
 } 
+
+
+div
+{
+  margin: 20;
+}
+
+img
+{
+  object-fit: fill;
+}
+
+#anony-nav
+{
+  margin-bottom: 30px;
+}
+
+#anony-nav .nav-right
+{
+  float:right;
+  margin-right:40px;
+}
+
+#anony-nav .anony-nav-links ul
+{
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#anony-nav .anony-nav-links li
+{ 
+  margin-top:20px ;
+  margin-left:40px;
+  float: right;
+  display: inline;
+}
+
+#anony-nav .anony-nav-links li a{
+  display: block;
+  width: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #669;
+  text-decoration: none;
+}
+
+a:link {
+  color: #37a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#anony-nav
+{
+  float: left;
+  width:100%;
+}
+
+#anony-nav .anony-nav-logo
+{
+  float: left;
+  margin-right:50px;
+  margin-left:30px;
+  display: inline;
+  width:100px;
+}
+
+#anony-nav .container
+{
+  float: left;
+  margin-right:70px;
+  margin-top:20px;
+  display: inline;
+  width:50%;
+}
+
+#anony-nav .login
+{
+  float: right;
+  margin-top: 20px;
+  display:inline;
+}
+
+#demo
+{
+  align: center;
+
+}
+
+
+
