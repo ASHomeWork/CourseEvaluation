@@ -18,7 +18,8 @@
 
   <div class="field">
     <%= form.label :college_id %>
-    <%= form.text_field :college_id %>
+    <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
+
   </div>
 
   <div class="actions">
