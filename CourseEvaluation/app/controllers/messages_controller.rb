@@ -25,18 +25,38 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
-    @message.from_id = 1
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+    @user = User.last
+    if params[:commit] == '发送'
+      @message = Message.new(message_params)
+      @message.from_id = current_user.id
+      if @message.to_id == nil
+        @message.to_id = current_user.id
+      end
+      respond_to do |format|
+        if @message.to_id > @user.id
+          format.html { redirect_to messages_url, notice: 'No user_id to send message.' }
+          format.json { render :show, status: :created, location: @message }
+        elsif @message.save
+          format.html { redirect_to @message, notice: 'Message was successfully sent.' }
+          format.json { render :show, status: :created, location: @message }
+        else
+          format.html { render :new }
+          format.json { render json: @message.errors, status: :unprocessable_entity }
+        end
+      end 
+    elsif params[:commit] == '发送给所有人'
+      for id in 1...@user.id + 1 do
+        @message = Message.new(message_params)
+        @message.from_id = current_user.id
+        @message.to_id = id
+        @message.save
+      end
+      respond_to do |format|
+          format.html { redirect_to messages_url, notice: 'Message was successfully sent to all.' }
+          format.json { render :show, status: :created, location: @message }
       end
     end
+    
   end
 
   # PATCH/PUT /messages/1
