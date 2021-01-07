@@ -1,7 +1,6 @@
 
 <html>
   <head>
-    <%= stylesheet_link_tag "index", media: "all","data-turbolinks-track" => true %>
   </head>
   <body>
    <div id="anony-nav">
@@ -16,32 +15,36 @@
         <button id="btn" class="btn btn-success" type="submit">搜索</button>
       <% end %>
     </div>
-    <div class="anony-nav-links">
-      <ul>
-        <li>
-          <%= link_to "课程",   '/courses' %>
-        </li>
-        <li>
-          <%= link_to "学院",   '/colleges' %>
-        </li>
-        <li>
-          <%= link_to "教师",   '/teachers' %>
-        </li>
-        <li>
-          <%= link_to "留言",   '/teachers' %>
-        </li>
-      </ul>
-    </div>
-    <div class="login">
-      <% if current_user.nil? %>
-        <%= link_to '注册', new_user_path %>
-        <%= link_to '登录', login_path %>
-      <% end %>
-      <% if !current_user.nil? %>
-        <%= render "partial" %>
-        <%= link_to '消息', messages_path %>
-      <% end %>
+    <div class="nav-right">
+      <div class="anony-nav-links">
+        <ul>
+          
+          <li>
+            <%= link_to "课程",   '/courses' %>
+          </li>
+          <li>
+            <%= link_to "学院",   '/colleges' %>
+          </li>
+          <li>
+            <%= link_to "教师",   '/teachers' %>
+          </li>
+          <li>
+            <%= link_to "留言",   '/teachers' %>
+          </li>
+        </ul>
+      </div>
+      <div class="login">
+        <% if current_user.nil? %>
+          <%= link_to '注册', new_user_path %>
+          <%= link_to '登录', login_path %>
+        <% end %>
+        <% if !current_user.nil? %>
+          <%= render "partial" %>
+          <%= link_to '消息', messages_path %>
+        <% end %>
+      </div>
     </div>  
+  </div>
 
 <div id="demo" class="carousel slide" data-ride="carousel">
  
@@ -51,7 +54,23 @@
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
   </ul>
-     <div class="line">
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+    </div>
+  </div>
+ 
+  <!-- 左右切换按钮 -->
+
+</div>
+<div class="line">
          <div class="square" id="square">U</div>
          <div class="square">C</div>
          <div class="square">A</div>
@@ -73,30 +92,7 @@
          <div class="square">o</div>
          <div class="square">n</div>
      </div>
-  <!-- 轮播图片 -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
-    </div>
-  </div>
- 
-  <!-- 左右切换按钮 -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
- 
-</div>
 
-<div>
 <p>Todo4:实现信息展示</p>
 <p>Todo5:其他</p>
 <% if !@user.nil? %>
