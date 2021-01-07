@@ -42,7 +42,7 @@
         <%= link_to '消息', messages_path %>
       <% end %>
     </div>  
-</div>
+
 <div id="demo" class="carousel slide" data-ride="carousel">
  
   <!-- 指示符 -->
@@ -51,7 +51,28 @@
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
   </ul>
- 
+     <div class="line">
+         <div class="square" id="square">U</div>
+         <div class="square">C</div>
+         <div class="square">A</div>
+         <div class="square">S</div>
+         <div class="square" style="margin-left:30px;">C</div>
+         <div class="square">o</div>
+         <div class="square">u</div>
+         <div class="square">r</div>
+         <div class="square">s</div>
+         <div class="square">e</div>
+         <div class="square" style="margin-left:30px;">E</div>
+         <div class="square">v</div>
+         <div class="square">a</div>
+         <div class="square">l</div>
+         <div class="square">u</div>
+         <div class="square">a</div>
+         <div class="square">t</div>
+         <div class="square">i</div>
+         <div class="square">o</div>
+         <div class="square">n</div>
+     </div>
   <!-- 轮播图片 -->
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -92,6 +113,45 @@
   </nav>
 </div>
 </div>
-</body>
+<%# 1111111111111 %>
+
+
+    
+
+
 
 </html>
+
+<script>
+var square = document.getElementsByClassName('square');
+
+for (var i = 0; i < square.length; i++) {
+    square[i].addEventListener('mouseenter', function() {
+        this.classList.add("rubberBand");
+        this.addEventListener("animationend", function() {
+            this.classList.remove("rubberBand");
+        }, false);
+    })
+}
+
+var menu = document.getElementById('menu');
+var secondcontainer = document.getElementById('secondcontainer');
+var scposition = secondcontainer.getBoundingClientRect();
+var profilpicture = document.getElementById('profilpicture');
+
+document.addEventListener("scroll", function(event) {
+    if (window.pageYOffset >= scposition.top - 150) {
+        menu.style.opacity = "0";
+    }
+    if (window.pageYOffset <= scposition.top - 150) {
+        menu.style.opacity = "1";
+    }
+
+    if (window.pageYOffset >= scposition.top - 100) {
+        profilpicture.classList.add('profilpicture-animation');
+    }
+    if (window.pageYOffset <= scposition.top - 600) {
+        profilpicture.classList.remove('profilpicture-animation');
+    }
+});
+</script>

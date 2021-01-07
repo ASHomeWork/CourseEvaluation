@@ -17,11 +17,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :收件人id %>
+    <%= form.label :收件人_id %>
     <%= form.number_field :to_id %>
   </div>
 
   <div class="actions">
     <%= form.submit "发送" ,data: { confirm: '确定发送？' } %>
+    <%= form.submit "发送给所有人" ,data: { confirm: '确定发送？' } %>
   </div>
 <% end %>

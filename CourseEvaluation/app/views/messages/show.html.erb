@@ -2,17 +2,20 @@
 
 <p>
   <strong>内容:</strong>
-  <%= @message.content %>
+  <p><%= @message.content %></p>
 </p>
 
 <p>
   <strong>发送者:</strong>
-  <%= @message.from_id %>
+  <li style="list-style-type: none;">admin</li>
 </p>
 
 <p>
-  <strong>收件人id:</strong>
-  <%= @message.to_id %>
+  <strong>收件人:</strong>
+  <% user = User.find_by(id: @message.to_id) %>
+  <% if user != nil %>
+    <p><%= user.user_name %></p>
+  <% end %>
 </p>
 
 <%= link_to '编辑', edit_message_path(@message) %> |

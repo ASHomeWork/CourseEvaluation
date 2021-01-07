@@ -8,7 +8,7 @@
       <th>内容</th>
       <th>发送者</th>
       <% if !current_user.nil? && current_user.power == 2 %>
-        <th>收件人id</th>
+        <th>收件人</th>
       <%end%>
       <th colspan="3"></th>
     </tr>
@@ -20,11 +20,15 @@
           <% if !current_user.nil? && current_user.power == 1 &&current_user.id == message.to_id%>
             <td><%= message.content %></td>
             <td><li style="list-style-type: none;">admin</li></td>
+            <td><%= link_to '删除', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
           <% if current_user.power == 2 %>
             <td><%= message.content %></td>
             <td><li style="list-style-type: none;">admin</li></td>
-            <td><%= message.to_id %></td>
+            <% user = User.find_by(id: message.to_id) %>
+            <% if user != nil %>
+              <td><%= user.user_name %></td>
+            <% end %>
             <td><%= link_to '详情', message %></td>
             <td><%= link_to '编辑', edit_message_path(message) %></td>
             <td><%= link_to '删除', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>

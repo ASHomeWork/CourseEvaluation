@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :姓名 %>
-    <%= form.text_field :姓名 %>
+    <%= form.label :name,"姓名" %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :学院 %>
-    <%= form.collection_select :学院, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
+    <%= form.label :college_id,"开课学院" %>
+    <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
   </div>
 
   <div class="field">
-    <%= form.label :邮箱 %>
-    <%= form.text_field :邮箱 %>
+    <%= form.label :email,"邮箱" %>
+    <%= form.text_field :email %>
   </div>
 
   <div class="field">
