@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "layout", media: "all", "data-turbolinks-track" => true %>
+<div id="header-top">
+	<div class="header-top-left">
+		<ul>
+			<li>
+				<%= link_to "课程",   '/courses' %>
+			</li>
+			<li>
+		        <%= link_to "学院",   '/colleges' %>
+		      </li>
+		      <li>
+		        <%= link_to "教师",   '/teachers' %>
+		      </li>
+		      <li>
+		        <%= link_to "热评",   '/teachers' %>
+		      </li>
+		</ul>
+	</div class="header-top-right">
+	<div>
+		<li>
+			<%= link_to '注册', new_user_path %>
+		</li>
+		<li>
+			<%= link_to '登录', login_path %>
+		</li>
+	</div>
+</div>
