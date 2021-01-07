@@ -1,27 +1,48 @@
 
 <html>
-
-<h1 align="left">果仁网</h1>
-<h2 align="left">www.guoren.com</h2>
-<body>
-<div align="right">
-<% if current_user.nil? %>
-  <%= link_to '注册', new_user_path %>
-  <%= link_to '登录', login_path %>
-<% end %>
-<% if !current_user.nil? %>
-  <%= render "partial" %>
-  <%= link_to '消息', messages_path %>
-<% end %>
+  <head>
+    <%= stylesheet_link_tag "index", media: "all","data-turbolinks-track" => true %>
+  </head>
+  <body>
+   <div id="anony-nav">
+    <div class="anony-nav-logo">
+      <% logo = image_tag("logo.png",:width=>'200%',:alt => "logo",:class => "logo") %>
+      <%= link_to logo, '/'  %>
+    </div>
+    <div class="container">
+      <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
+        <%= f.label "搜一下想看的课程叭" %>
+        <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
+        <button id="btn" class="btn btn-success" type="submit">搜索</button>
+      <% end %>
+    </div>
+    <div class="anony-nav-links">
+      <ul>
+        <li>
+          <%= link_to "课程",   '/courses' %>
+        </li>
+        <li>
+          <%= link_to "学院",   '/colleges' %>
+        </li>
+        <li>
+          <%= link_to "教师",   '/teachers' %>
+        </li>
+        <li>
+          <%= link_to "留言",   '/teachers' %>
+        </li>
+      </ul>
+    </div>
+    <div class="login">
+      <% if current_user.nil? %>
+        <%= link_to '注册', new_user_path %>
+        <%= link_to '登录', login_path %>
+      <% end %>
+      <% if !current_user.nil? %>
+        <%= render "partial" %>
+        <%= link_to '消息', messages_path %>
+      <% end %>
+    </div>  
 </div>
-<div class="container">
-  <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
-    <%= f.label "搜一下想看的课程叭" %>
-    <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
-    <button id="btn" class="btn btn-success" type="submit">搜索</button>
-  <% end %>
-</div>
-
 <div id="demo" class="carousel slide" data-ride="carousel">
  
   <!-- 指示符 -->

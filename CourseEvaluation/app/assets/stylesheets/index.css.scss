@@ -1,0 +1,59 @@
+@import "bootstrap";
+
+div
+{
+	margin: 20;
+}
+
+#anony-nav .anony-nav-links ul
+{
+	list-style-type: none;
+	margin-top: 10px;
+	padding: 0;
+}
+
+#anony-nav .anony-nav-links li
+{	
+	margin-top:20px ;
+	margin-left:40px;
+	float: left;
+	display: inline;
+}
+
+#anony-nav .anony-nav-links li a{
+	display: block;
+	width: 40px;
+	font-size: 20px;
+}
+
+#anony-nav
+{
+	float: left;
+	width:100%;
+}
+
+#anony-nav .anony-nav-logo
+{
+	float: left;
+	margin-right:50px;
+	margin-left:30px;
+	display: inline;
+	width:100px;
+}
+
+#anony-nav .container
+{
+	float: left;
+	margin-left:70px;
+	margin-top:20px;
+	display: inline;
+	width:50%;
+}
+
+#anony-nav .login
+{
+	float: right;
+	margin: 20px 40px 20px 0;
+	display:inline;
+}
+
