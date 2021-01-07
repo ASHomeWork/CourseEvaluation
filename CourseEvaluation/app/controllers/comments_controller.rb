@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  include SessionsHelper 
   # GET /comments
   # GET /comments.json
   def index

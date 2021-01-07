@@ -153,3 +153,6 @@ function calculateAverage() {
 
     $('.js-average').text((average / $('.rating').length).toFixed(1))
 }
+function callModal(){
+    $('#myModal').modal(options)
+}

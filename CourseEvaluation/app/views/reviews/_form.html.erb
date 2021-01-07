@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label "回复Ta:" %>
     <%= form.text_field :content %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :comment_id %>
     <%= form.text_field :comment_id %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "回复"%>
   </div>
 <% end %>

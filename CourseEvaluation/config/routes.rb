@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   post '/courses/select_with_logged', to: 'courses#select_with_logged'
   get '/select_with_logged', to: 'courses#select_with_logged'
 
+  get '/courses/review', to: 'courses#to_review'
+
   resources :courses do
     collection do
       match 'search' => 'courses#search', via: [:get, :post], as: :search
