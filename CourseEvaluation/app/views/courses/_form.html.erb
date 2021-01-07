@@ -12,36 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :课程名称 %>
+    <%= form.text_field :课程名称 %>
   </div>
 
   <div class="field">
-    <%= form.label :college_id %>
-    <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
+    <%= form.label :开课学院 %>
+    <%= form.collection_select :开课学院, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
     <% if !current_user.nil? && current_user.power == 2 %>
     <font size="3" color="blue">找不到学院？</font><%= link_to '添加学院', new_college_path %>
     <% end %>
   </div>
+
   <div class="field">
-    <%= form.label :major_id %>
-    <%= form.collection_select :major_id, Major.where('id < 1'), :id, :name,{ :include_blank => '选择专业' } %>
+    <%= form.label :专业名称 %>
+    <%= form.collection_select :专业名称, Major.where('id < 1'), :id, :name,{ :include_blank => '选择专业' } %>
     <% if !current_user.nil? && current_user.power == 2 %>
       <font size="3" color="blue">找不到专业？</font><%= link_to '添加专业', new_major_path %>
     <% end %>
   </div>
 
   <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.collection_select :teacher_id, Teacher.where('id < 1'), :id, :name, { :include_blank => '选择教师' } %>
+    <%= form.label :授课老师 %>
+    <%= form.collection_select :授课老师, Teacher.where('id < 1'), :id, :name, { :include_blank => '选择教师' } %>
       <% if !current_user.nil? && current_user.power == 2 %>
       <font size="3" color="blue">找不到老师？</font><%= link_to '添加老师', new_teacher_path %>
   <% end %> 
   </div>       
 
   <div class="field">
-    <%= form.label :year %>
-    <%= form.date_select :year %>
+    <%= form.label :学年 %>
+    <%= form.date_select :学年 %>
   </div>
 
   <div class="actions">
