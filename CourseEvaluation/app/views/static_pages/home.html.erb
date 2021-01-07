@@ -17,7 +17,7 @@
     <div class="nav-right">
       <div class="anony-nav-links">
         <ul>
-          
+    
           <li>
             <%= link_to "课程",   '/courses' %>
           </li>
@@ -88,9 +88,12 @@
        <div class="square">o</div>
        <div class="square">n</div>
    </div>
-<div>
-<p>Todo4:实现信息展示</p>
-<p>Todo5:其他</p>
+<div class="more">
+<h2 style="font-size:20px">热门课程······<%= link_to "更多",'/courses' %></h2>
+</div>
+<div class="more">
+<h2 style="font-size:20px">热门评论······<%= link_to "更多",'/comments' %></h2>
+</div>
 <% if !@user.nil? %>
   <%= link_to '用户资料页', @user %>
 <% end %>
