@@ -100,6 +100,33 @@ class CoursesController < ApplicationController
     end
   end
 
+  def create_comment
+    #将客户端提交的参数保存到变量中
+    content = params[:content]
+    course_id = params[:course_id]
+    #先判断当前是否有用户登录，没有登录需要提示登录
+    if current_user.blank?
+      flash.notice = "您还未登录，请先登录！"
+      redirect_to "/courses/#{course_id}"
+    #再判断评论内容是否为空，内容为空，提示并且返回到帖子详情页面
+    elsif content.blank?
+      flash.notice = "评论内容不能为空"
+      redirect_to "/courses/#{course_id}"
+    else
+      #as_type参数为0时，说明是帖子的评论
+      
+        #创建评论
+        boolean_0 = Comment.create(user_id: current_user.id,content: content,course_id: course_id)
+        if boolean_0
+          flash.notice = "评论成功"
+        else
+          flash.notice = "评论失败，请重新评论"
+        end
+        #重定向到帖子详情页面
+        redirect_to "/courses/#{course_id}"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

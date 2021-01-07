@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/courses/select_with_ajax', to: 'courses#select_with_ajax'
   post '/courses/select_with_ajax1', to: 'courses#select_with_ajax1'
   post '/courses/select_with_logged', to: 'courses#select_with_logged'
+  post '/courses/create_comment' => 'courses#create_comment'
+
   get '/select_with_logged', to: 'courses#select_with_logged'
 
   get '/courses/review', to: 'courses#to_review'
@@ -60,7 +62,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :colleges
   resources :majors
-  resources :courses
+  resources :courses 
   resources :genders
   resources :comments
   resources :messages

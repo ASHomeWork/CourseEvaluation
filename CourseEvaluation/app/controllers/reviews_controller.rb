@@ -28,15 +28,16 @@ class ReviewsController < ApplicationController
 
     @review = Review.new(review_params)
 
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
+    
+    if @review.save
+      redirect_to "/courses/#{@review.comment.course_id}"
+      # format.html { redirect_to @review, notice: 'Review was successfully created.' }
+      # format.json { render :show, status: :created, location: @review }
+    else
+      format.html { render :new }
+      format.json { render json: @review.errors, status: :unprocessable_entity }
     end
+    
   end
 
   # PATCH/PUT /reviews/1
