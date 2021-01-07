@@ -354,12 +354,75 @@ div
   margin: 20;
 }
 
+<<<<<<< HEAD
+=======
+img
+{
+  object-fit: fill;
+}
+
+#anony-nav
+{
+  margin-bottom: 30px;
+}
+
+#anony-nav .nav-right
+{
+  float:right;
+  margin-right:40px;
+}
+
+#anony-nav .anony-nav-links ul
+{
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+#anony-nav .anony-nav-links li
+{ 
+  margin-top:20px ;
+  margin-left:40px;
+  float: right;
+  display: inline;
+}
+
+#anony-nav .anony-nav-links li a{
+  display: block;
+  width: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #669;
+  text-decoration: none;
+}
+
+a:link {
+  color: #37a;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+>>>>>>> 641ff4526ea924045fcbe447df18eac04ff3eeaa
 
 #anony-nav
 {
   float: left;
   width:100%;
+<<<<<<< HEAD
   margin-bottom:40px;
+=======
+>>>>>>> 641ff4526ea924045fcbe447df18eac04ff3eeaa
 }
 
 #anony-nav .anony-nav-logo
@@ -374,12 +437,17 @@ div
 #anony-nav .container
 {
   float: left;
+<<<<<<< HEAD
   margin-left:70px;
+=======
+  margin-right:70px;
+>>>>>>> 641ff4526ea924045fcbe447df18eac04ff3eeaa
   margin-top:20px;
   display: inline;
   width:50%;
 }
 
+<<<<<<< HEAD
 #anony-nav .nav-right
 {
   float:right;
@@ -418,4 +486,20 @@ div
   width: 40px;
   font-size: 20px;
 }
+=======
+#anony-nav .login
+{
+  float: right;
+  margin-top: 20px;
+  display:inline;
+}
+
+#demo
+{
+  align: center;
+
+}
+
+
+>>>>>>> 641ff4526ea924045fcbe447df18eac04ff3eeaa
 
