@@ -1,12 +1,12 @@
 <% provide(:title, @user.user_name) %>
-<div class="info">
+<div class="ok">
   <ul>
-
-  <li><%= image_tag("pic1.jpg") %></li>
-  <li><strong>用户名:</strong><%= @user.user_name %></li>
-  <li><strong>邮箱:</strong><%= @user.email %></li>
-   <li><%= link_to "资料详情",   @user %></li>
-  <li><%= link_to '消息', messages_path %></li>
-  <li><%= link_to "退出登录",   '/logout' %></li>
+    <% users_link = image_tag("pic1.jpg",:width=>'40px') %>
+    <li><%= link_to users_link, @user %></li>
+    <% usr=@user.user_name %>
+    <li style="margin-top:10px;"><strong>用户名:</strong><%= link_to usr,@user %></li>
+    <li style="margin-top:10px;"><%= link_to "退出登录",   '/logout' %></li>
+    <% messages_link = image_tag("messages.jpg",:width=>'40px') %>
+    <li><%= link_to messages_link, messages_path %></li>
   </ul>
 </div>
