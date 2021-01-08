@@ -4,10 +4,11 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700,800,900&subset=latin-ext");
 /* line 4, ../sass/tmp.scss */
 body {
-  font-family: 'Quicksand';
-  margin: 0;
-  text-align:center;
+  //background-image: url(/assets/back.jpg);
+  //background-color:wheat;
+  //bodybackcolo
 }
+
 /* line 8, ../sass/tmp.scss */
 .container1 {
   display: flex;
@@ -18,6 +19,49 @@ body {
   max-width: 100%;
   height: 100vh;
 }
+
+form.course_search{
+  input#q_name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont{
+    width:400px;height: 50px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:   100;
+    font-size: 25px;
+    outline: none;
+    border: none;
+    background-color:beige;
+    border-radius: 25px;
+    cursor:auto;
+  }
+
+  .bar1{
+    background-color:beige;
+    border: black;
+    border-radius: 25px;
+    justify-content: center;
+    margin:0 auto;
+    margin-bottom: 300px;
+    width:500px;
+    height:50px;
+  }
+
+  .btn{
+    height: 50px;
+    background-color:wheat;
+    border-radius: 25px;
+    font-weight:   100;
+    font-size: 25px;
+    border: black;
+    border-collapse:collapse;
+  }
+
+  .icon{
+    background-color: beige;
+  }
+}
+
 
 /* line 17, ../sass/tmp.scss */
 .gradient-purple-blue {
@@ -732,6 +776,23 @@ div
   display: inline;
   width:20%;
 
+
+ul{
+  text-align:center;
+  list-style-type:none;
+}
+
+ul li{
+  margin-right: 50px;
+  display:inline-block;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+#anony-nav .nav-right
+{
+  float:right;
+  margin-right:60px;
 }
 
 #anony-nav .nav-right

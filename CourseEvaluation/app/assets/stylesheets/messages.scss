@@ -1,3 +1,24 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.messages_table {
+    border-collapse:collapse;
+    margin:0 auto;
+    width:100%;
+    text-align:center;
+}
+
+.messages_table th {
+    background-color:#ddccdd;
+}
+
+.messages_table th,.messages_table td {
+    border:1px solid #CECFCE;
+    padding:10px;
+    height:25px;
+}
+
+.messages_table tr td:first-child {
+    width:125ch;
+}
