@@ -370,7 +370,7 @@ html {
 body {
     position: relative;
     min-height: 100%;
-    text-align: left;
+    text-align: center;
     font-family: Lato, Arial, sans-serif;
     color: #070101;
     background-color: #8572a7;
@@ -1139,4 +1139,18 @@ span.mii-stars {
   }
   
 
-  
+//....
+ .error_explanation
+{
+  align:center;
+}
+
+.field
+{
+  align:center;
+}
+
+.actions
+{
+    align:center;
+}
