@@ -12,18 +12,24 @@
 		        <%= link_to "教师",   '/teachers' %>
 		      </li>
 		      <li>
-		        <%= link_to "热评",   '/teachers' %>
+		        <%= link_to "热评",   '/reviews' %>
 		      </li>
 		</ul>
 	</div >
 	<div class="header-top-right">
 		<ul>
-			<li>
-				<%= link_to '注册', '/users/new' %>
-			</li>
-			<li>
-				<%= link_to '登录', '/sessions/new' %>
-			</li>
+			<% if current_user == nil %>
+				<li>
+					<%= link_to '注册', '/users/new' %>
+				</li>
+				<li>
+					<%= link_to '登录', '/sessions/new' %>
+				</li>
+			<% else %>
+				<li>
+					<%= link_to "退出登录",   '/logout' %>
+				</li>
+			<% end %>
 		</ul>
 	</div>
 </div>
