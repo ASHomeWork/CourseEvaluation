@@ -670,3 +670,27 @@ body {
 {
     align:center;
 }
+
+#add_course
+{
+    border: 2px solid;
+    margin:0 aotu;
+    width: 350px; 
+    height: 400px; 
+    position: absolute; left:50%; 
+    top:40%; 
+    transform:translate(-50%,-50%);
+    box-shadow:2px 2px 10px #000;
+}
+
+#add_course .field
+{
+    text-align:left;
+    padding-left:70px;
+
+}
+
+#add_course .btn
+{
+    padding-left:110px
+}
