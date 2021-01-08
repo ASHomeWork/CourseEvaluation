@@ -2,46 +2,27 @@
 <html>
   <head>
   </head>
-   <div style="align:right;">
-      <div class="line">
-        <% if current_user.nil? %>
-          <%= link_to '注册', new_user_path %>
-          <div style="margin-left:30px;">
-          <%= link_to '登录', login_path %>
-          </div>
-        <% end %>
-        <% if !current_user.nil? %>
-          <%= render "partial" %>
-          <div style="margin-left:30px;">
-          <%= link_to '消息', messages_path %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="line">
-       <div class="square" id="square">U</div>
-       <div class="square">C</div>
-       <div class="square">A</div>
-       <div class="square">S</div>
-       <div class="square" style="margin-left:30px;">C</div>
-       <div class="square">o</div>
-       <div class="square">u</div>
-       <div class="square">r</div>
-       <div class="square">s</div>
-       <div class="square">e</div>
-       <div class="square" style="margin-left:30px;">E</div>
-       <div class="square">v</div>
-       <div class="square">a</div>
-       <div class="square">l</div>
-       <div class="square">u</div>
-       <div class="square">a</div>
-       <div class="square">t</div>
-       <div class="square">i</div>
-       <div class="square">o</div>
-       <div class="square">n</div>
-   </div>
    <div id="anony-nav">
+    <div class="anony-nav-logo">
+      <% logo = image_tag("logo.png",:width=>'200%',:alt => "logo",:class => "logo") %>
+      <%= link_to logo, '/'  %>
+    </div>
+    <div class="container">
+      <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
+        <%= f.label "搜一下想看的课程叭" %>
+        <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
+        <button id="btn" class="btn btn-success" type="submit">搜索</button>
+      <% end %>
+    </div>
     <div class="nav-right">
+      <div class="login">
+      <% if current_user.nil? %>
+        <ul>
+          <li><%= link_to '注册', new_user_path %></li>
+          <li><%= link_to '登录', login_path %></li>
+        </ul>
+      <% end %>
+    </div>
       <div class="anony-nav-links">
         <ul>
           <li>
@@ -54,21 +35,42 @@
             <%= link_to "教师",   '/teachers' %>
           </li>
           <li>
-            <%= link_to "留言",   '/teachers' %>
+            <%= link_to "评论",   '/reviews' %>
           </li>
         </ul>
       </div>
-    </div>  
-   </div>
-   <div class="bar7">
-   <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
-     <div class = "bar1">
-       <span class="icon" ><%= image_tag("search2.ico") %></span>
-       <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont,placeholder: "搜一下想看的课程叭",autocomplete: "off" %>
-       <input type="submit" value="搜索" id="btn" class="btn" >
-     </div>
-   <% end %>
+      
+    <div class="user_info">
+      <% if !current_user.nil? %>
+          <%= render "partial" %>
+      <% end %>
+    </div>
+    </div>
   </div>
+<div>
+</div>
+<div class="line">
+   <div class="square" id="square">U</div>
+   <div class="square">C</div>
+   <div class="square">A</div>
+   <div class="square">S</div>
+   <div class="square" style="margin-left:30px;">C</div>
+   <div class="square">o</div>
+   <div class="square">u</div>
+   <div class="square">r</div>
+   <div class="square">s</div>
+   <div class="square">e</div>
+   <div class="square" style="margin-left:30px;">E</div>
+   <div class="square">v</div>
+   <div class="square">a</div>
+   <div class="square">l</div>
+   <div class="square">u</div>
+   <div class="square">a</div>
+   <div class="square">t</div>
+   <div class="square">i</div>
+   <div class="square">o</div>
+   <div class="square">n</div>
+</div>
 <div class="more">
 <h2 style="font-size:20px">热门课程······<%= link_to "更多",'/courses' %></h2>
 </div>
