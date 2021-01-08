@@ -2,22 +2,6 @@
 <html>
   <head>
   </head>
-   <div style="align:right;">
-      <div class="line">
-        <% if current_user.nil? %>
-          <%= link_to '注册', new_user_path %>
-          <div style="margin-left:30px;">
-          <%= link_to '登录', login_path %>
-          </div>
-        <% end %>
-        <% if !current_user.nil? %>
-          <%= render "partial" %>
-          <div style="margin-left:30px;">
-          <%= link_to '消息', messages_path %>
-          </div>
-        <% end %>
-      </div>
-    </div>
    <div id="anony-nav">
     <div class="anony-nav-logo">
       <% logo = image_tag("logo.png",:width=>'200%',:alt => "logo",:class => "logo") %>
@@ -31,6 +15,14 @@
       <% end %>
     </div>
     <div class="nav-right">
+      <div class="login">
+      <% if current_user.nil? %>
+        <ul>
+          <li><%= link_to '注册', new_user_path %></li>
+          <li><%= link_to '登录', login_path %></li>
+        </ul>
+      <% end %>
+    </div>
       <div class="anony-nav-links">
         <ul>
     
@@ -44,57 +36,43 @@
             <%= link_to "教师",   '/teachers' %>
           </li>
           <li>
-            <%= link_to "留言",   '/reviews' %>
+            <%= link_to "评论",   '/reviews' %>
 
           </li>
         </ul>
       </div>
       
-    </div>  
-  </div>
- 
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <!-- 指示符 -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-    <!-- 轮播图片 -->
-    <div class="carousel-inner">
-      <div class="carousel-item active" style="width:100%">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg" style="object-fit:fill">
-      </div>
-      <div class="carousel-item">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
-      </div>
-      <div class="carousel-item">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
-      </div>
+    <div class="user_info">
+      <% if !current_user.nil? %>
+          <%= render "partial" %>
+      <% end %>
+    </div>
     </div>
   </div>
-    <div class="line">
-       <div class="square" id="square">U</div>
-       <div class="square">C</div>
-       <div class="square">A</div>
-       <div class="square">S</div>
-       <div class="square" style="margin-left:30px;">C</div>
-       <div class="square">o</div>
-       <div class="square">u</div>
-       <div class="square">r</div>
-       <div class="square">s</div>
-       <div class="square">e</div>
-       <div class="square" style="margin-left:30px;">E</div>
-       <div class="square">v</div>
-       <div class="square">a</div>
-       <div class="square">l</div>
-       <div class="square">u</div>
-       <div class="square">a</div>
-       <div class="square">t</div>
-       <div class="square">i</div>
-       <div class="square">o</div>
-       <div class="square">n</div>
-   </div>
+<div>
+</div>
+<div class="line">
+   <div class="square" id="square">U</div>
+   <div class="square">C</div>
+   <div class="square">A</div>
+   <div class="square">S</div>
+   <div class="square" style="margin-left:30px;">C</div>
+   <div class="square">o</div>
+   <div class="square">u</div>
+   <div class="square">r</div>
+   <div class="square">s</div>
+   <div class="square">e</div>
+   <div class="square" style="margin-left:30px;">E</div>
+   <div class="square">v</div>
+   <div class="square">a</div>
+   <div class="square">l</div>
+   <div class="square">u</div>
+   <div class="square">a</div>
+   <div class="square">t</div>
+   <div class="square">i</div>
+   <div class="square">o</div>
+   <div class="square">n</div>
+</div>
 <div class="more">
 <h2 style="font-size:20px">热门课程······<%= link_to "更多",'/courses' %></h2>
 </div>

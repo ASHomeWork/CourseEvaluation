@@ -709,18 +709,19 @@ div
 
 #anony-nav
 {
+  padding-top:20px;
   width:100%;
-  margin-bottom:40px;
-  height:80px;
+  height:150px;
 }
 
 #anony-nav .anony-nav-logo
 {
   float: left;
   margin-right:50px;
-  margin-left:30px;
+  margin-left:60px;
   display: inline;
-  width:100px;
+  width:5%;
+
 }
 
 #anony-nav .container
@@ -729,32 +730,29 @@ div
   margin-left:70px;
   margin-top:20px;
   display: inline;
-  width:50%;
+  width:20%;
+
 }
 
 #anony-nav .nav-right
 {
   float:right;
-  margin-right:60px;
-}
-
-#anony-nav .login
-{
-  margin-left:200px;
-  font-size:15px;
+  height:80px;
 }
 
 #anony-nav .anony-nav-links
 {
-  margin-bottom:60px;
+  margin-left:100px;
+  height:40px;
+  margin-top:20px;
 }
 
 #anony-nav .anony-nav-links ul
 {
-  
+  margin-right:80px;
   list-style-type: none;
   margin-top: 10px;
-  padding: 0;
+  padding: 0px;
 }
 
 #anony-nav .anony-nav-links li
@@ -765,20 +763,62 @@ div
   display: inline;
 }
 
-#anony-nav .anony-nav-links li a{
+#anony-nav .anony-nav-links li a
+{
   display: block;
   width: 40px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-#demo
+ .login
 {
-  height:350px;
+  float:right;
+  padding:0;
+  width:200px;  
+
 }
 
-.more
+
+.user_info
 {
-  margin:40px 40px 40px 40px;
+  float:right;
+  padding:0;
+  height:20px;
+  width:600px;
+
+}
+
+ .login ul
+{
+  margin-top:20px ;
+  display: inline;
+
+}
+
+ .login li 
+{
+  margin-top:20px ;
+  margin-right:40px;
+  display: inline;
+}
+
+ .info ul
+{
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+
+ .info  li 
+{
+  
+  margin-right:20px;
+  display: inline;
+}
+
+#line{
+  height:200px;
 }
 
 a:visited {
