@@ -13,9 +13,6 @@
         <% end %>
         <% if !current_user.nil? %>
           <%= render "partial" %>
-          <div style="margin-left:30px;">
-          <%= link_to '消息', messages_path %>
-          </div>
         <% end %>
       </div>
     </div>
@@ -41,42 +38,30 @@
        <div class="square">o</div>
        <div class="square">n</div>
     </div>
-    <div id="anony-nav" style="background: linear-gradient(to bottom, wheat 0%,#ffffff 100%);">
-    <div class="nav-right">
-      <div class="login">
-      <% if current_user.nil? %>
-        <ul>
-          <li><%= link_to '注册', new_user_path %></li>
-          <li><%= link_to '登录', login_path %></li>
-        </ul>
-      <% end %>
-    </div>
-      <div class="anony-nav-links">
-        <ul>
-          <li><%= link_to "课程",   '/courses' %></li>
-          <li><%= link_to "学院",   '/colleges' %></li>
-          <li><%= link_to "教师",   '/teachers' %></li>
-          <li><%= link_to "留言",   '/teachers' %></li>
-        </ul>
-      </div>
-    </div>  
+    <div class="container">
+      <ul>
+        <li><%= link_to "课程",   '/courses' %></li>
+        <li><%= link_to "学院",   '/colleges' %></li>
+        <li><%= link_to "教师",   '/teachers' %></li>
+        <li><%= link_to "留言",   '/teachers' %></li>
+      </ul>
     </div>
     <div class="bar7">
-    <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
-     <div class = "bar1">
-       <span class="icon" ><%= image_tag("search2.ico") %></span>
-       <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont,placeholder: "搜一下想看的课程叭",autocomplete: "off" %>
-       <input type="submit" value="搜索" id="btn" class="btn" >
-     </div>
-    <% end %>
+      <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
+       <div class = "bar1">
+         <span class="icon" ><%= image_tag("search2.ico") %></span>
+         <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont,placeholder: "搜一下想看的课程叭",autocomplete: "off" %>
+         <input type="submit" value="搜索" id="btn" class="btn" >
+       </div>
+      <% end %>
     </div>
     <div class="container" >
-    <ul>
-      <li><%= link_to "首页",   '/' %></li>
-      <li><%= link_to "帮助",   '/help' %></li>
-      <li><%= link_to "关于",  '/about' %></li>
-      <li><%= link_to "联系方式", '/contact' %></li>
-    </ul>
+      <ul>
+        <li><%= link_to "首页",   '/' %></li>
+        <li><%= link_to "帮助",   '/help' %></li>
+        <li><%= link_to "关于",  '/about' %></li>
+        <li><%= link_to "联系方式", '/contact' %></li>
+      </ul>
     </div>
   </body>
 </html>

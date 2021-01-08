@@ -775,19 +775,27 @@ div
   margin-top:20px;
   display: inline;
   width:20%;
+}
 
+.container {
+  *text-align:center;
+}
 
-ul{
-  text-align:center;
-  list-style-type:none;
+ul {
+  display:table;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 ul li{
-  margin-right: 50px;
-  display:inline-block;
+  float:left;
+  *float:none;
+  *display:inline;*zoom:1;
   font-size: 25px;
   font-weight: 100;
+  margin-right: 40px;
 }
+
 
 #anony-nav .nav-right
 {
@@ -804,7 +812,7 @@ ul li{
 {
   float:left;
   height:40px;
-  widht:400px;
+  width:400px;
   margin-left:250px;
 }
 
@@ -956,6 +964,4 @@ a:hover{
   margin: 10px 10px 10px 10px;
   width:500px;
   height:600px;
-}
-
 }
