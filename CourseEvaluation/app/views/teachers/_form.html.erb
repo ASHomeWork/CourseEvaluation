@@ -1,6 +1,6 @@
 <%= form_with(model: teacher, local: true) do |form| %>
   <% if teacher.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" style="text-align: center;margin-bottom:20px">
       <h2><%= pluralize(teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
 
       <ul>
@@ -11,29 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" style="text-align: center;margin-bottom:20px">
     <%= form.label :name,"姓名" %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :college_id,"开课学院" %>
+  <div class="field" style="text-align: center;margin-bottom:20px">
+    <%= form.label :college_id,"学院" %>
     <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
   </div>
 
-  <div class="field">
+  <div class="field" style="text-align: center;margin-bottom:20px">
     <%= form.label :email,"邮箱" %>
     <%= form.text_field :email %>
   </div>
 
-  <div class="field">
+  <div class="field" style="text-align: center;margin-bottom:20px">
     <%= form.radio_button :gender_id, "1" %>
     <%= form.label :gender_id_1, "男老师" %>
     <%= form.radio_button :gender_id, "2" %>
     <%= form.label :gender_id_2, "女老师" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit "提交",data:{ confirm: '确定添加？' }%>
-  </div>
+  <ul>
+    <li style="display: inline; margin-right:20px">
+      <%= form.submit "提交",data:{ confirm: '确定添加？' }%>
+    </li>
+    <li style="display: inline; margin-left:20px">
+      <input type = "submit" name="Submit"  value="返回" onclick="javascript:window.history.back(-1);" >
+    </li>
+  </ul>
 <% end %>

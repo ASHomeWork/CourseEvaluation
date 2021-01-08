@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name,"专业名称" %>
+    <%= form.label :name,"专业" %>
     <%= form.text_field :name %>
   </div>
 
@@ -20,8 +20,10 @@
     <%= form.label :college_id,"学院" %>
     <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院' }%>
   </div>
-
-  <div class="actions">
-    <%= form.submit "提交", data:{ confirm: '确定添加？' }%>
+  <div class="btn">
+  <ul>
+    <li style="display: inline; margin-left:20px"><%= form.submit "提交", data:{ confirm: '确定添加？' }%></li>
+    <li style="display: inline; margin-left:20px"><input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);"></li>
+  </ul>
   </div>
 <% end %>
