@@ -1,3 +1,21 @@
 // Place all the styles related to the Colleges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+ @import "bootstrap/dist/css/bootstrap";
+
+*{margin:0;padding:0}
+
+
+#add_college
+{
+	border: 2px solid;
+	margin:0 aotu;
+	text-align:center;
+	width: 300px; 
+	height: 300px; 
+	position: absolute; left:50%; 
+	top:40%; 
+	transform:translate(-50%,-50%);
+	box-shadow:2px 2px 10px #000;
+}
