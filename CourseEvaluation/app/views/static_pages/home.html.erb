@@ -43,6 +43,14 @@
     </div>
     <div id="anony-nav" style="background: linear-gradient(to bottom, wheat 0%,#ffffff 100%);">
     <div class="nav-right">
+      <div class="login">
+      <% if current_user.nil? %>
+        <ul>
+          <li><%= link_to '注册', new_user_path %></li>
+          <li><%= link_to '登录', login_path %></li>
+        </ul>
+      <% end %>
+    </div>
       <div class="anony-nav-links">
         <ul>
           <li><%= link_to "课程",   '/courses' %></li>

@@ -753,18 +753,19 @@ div
 
 #anony-nav
 {
+  padding-top:20px;
   width:100%;
-  margin-bottom:40px;
-  height:80px;
+  height:150px;
 }
 
 #anony-nav .anony-nav-logo
 {
   float: left;
   margin-right:50px;
-  margin-left:30px;
+  margin-left:60px;
   display: inline;
-  width:100px;
+  width:5%;
+
 }
 
 #anony-nav .container
@@ -773,8 +774,7 @@ div
   margin-left:70px;
   margin-top:20px;
   display: inline;
-  width:50%;
-}
+  width:20%;
 
 
 ul{
@@ -795,23 +795,26 @@ ul li{
   margin-right:60px;
 }
 
-#anony-nav .login
+#anony-nav .nav-right
 {
-  margin-left:200px;
-  font-size:15px;
+  margin-left:30px;
 }
 
 #anony-nav .anony-nav-links
 {
-  margin-bottom:60px;
+  float:left;
+  height:40px;
+  widht:400px;
+  margin-left:250px;
 }
+
 
 #anony-nav .anony-nav-links ul
 {
-  
+  margin-right:80px;
   list-style-type: none;
   margin-top: 10px;
-  padding: 0;
+  padding: 0px;
 }
 
 #anony-nav .anony-nav-links li
@@ -822,20 +825,64 @@ ul li{
   display: inline;
 }
 
-#anony-nav .anony-nav-links li a{
+#anony-nav .anony-nav-links li a
+{
   display: block;
   width: 40px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-#demo
+ .login
 {
-  height:350px;
+  float:right;
+  padding:0;
+  height:15px;
+  width:200px;
+  margin-right:100px;
+
 }
 
-.more
+
+.user_info
 {
-  margin:40px 40px 40px 40px;
+  float:right;
+  padding:0;
+  height:20px;
+  width:600px;
+
+}
+
+ .login ul
+{
+  margin-top:20px ;
+  display: inline;
+
+}
+
+ .login li 
+{
+  margin-top:20px ;
+  margin-right:40px;
+  display: inline;
+}
+
+ .info ul
+{
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+
+ .info  li 
+{
+  
+  margin-right:20px;
+  display: inline;
+}
+
+#line{
+  height:200px;
 }
 
 a:visited {
@@ -862,3 +909,53 @@ a:hover{
   top: 10px;
 }
 
+.more
+{
+  margin: 10px 60px 20px 60px;
+}
+
+.p_courses
+{
+  font-size:18px;
+  height:20px;
+}
+
+.p_reviews
+{
+  font-size:18px; 
+  height:40px;
+}
+
+.popular_courses
+{
+  float:left;
+  margin: 10px 10px 10px 10px;
+  width:500px;
+  height:600px;
+}
+
+.c_line_1
+{
+  float:left;
+  width:200px;
+  height:200px;
+  margin:10px 0px 10px 10px;
+}
+
+.c_line_2
+{
+  float:left;
+  width:200px;
+  height:200px;
+  margin:10px 0px 10px 10px;
+}
+
+.popular_reviews
+{
+  float:left;
+  margin: 10px 10px 10px 10px;
+  width:500px;
+  height:600px;
+}
+
+}
