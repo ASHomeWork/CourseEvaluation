@@ -3,19 +3,16 @@
   <head>
   </head>
   <body>
-    <div style="align:right;">
-      <div class="line">
-        <% if current_user.nil? %>
-          <%= link_to '注册', new_user_path %>
-          <div style="margin-left:30px;">
-          <%= link_to '登录', login_path %>
-          </div>
-        <% end %>
-        <% if !current_user.nil? %>
-          <%= render "partial" %>
-        <% end %>
-      </div>
-    </div>
+      <% if current_user.nil? %>
+        <div class="ok" >
+          <ul>
+            <li><%= link_to '注册', new_user_path %></li>
+            <li><%= link_to '登录', login_path %></li>
+          </ul>
+        </div>
+      <% else %>
+        <%= render "partial" %>
+      <% end %>
     <div class="line" >
        <div class="square" id="square">U</div>
        <div class="square">C</div>
