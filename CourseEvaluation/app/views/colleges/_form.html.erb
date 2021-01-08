@@ -10,13 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div>
+  <div class="field" style="text-align: center;margin-bottom:20px">
     <%= form.label :college_id,"学院名称" %>
     <%= form.text_field :college_id %>
   </div>
-
-  <div class="actions">
+  <ul>
+  <li style="display: inline; margin-right:20px">
     <%= form.submit "提交",data: { confirm: '确定添加？' } %>
-  </div>
+  </li>
+  <li style="display: inline; margin-left:20px">
+    <input type = "submit" name="Submit"  value="返回" onclick="javascript:window.history.back(-1);" >
+  </li>
+  </ul>
+</div>
 <% end %>
