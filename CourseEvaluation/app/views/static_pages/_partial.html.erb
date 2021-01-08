@@ -6,7 +6,8 @@
   <li><strong>用户名:</strong><%= @user.user_name %></li>
   <li><strong>邮箱:</strong><%= @user.email %></li>
    <li><%= link_to "资料详情",   @user %></li>
-  <li><%= link_to '消息', messages_path %></li>
   <li><%= link_to "退出登录",   '/logout' %></li>
+  <% messages_link = image_tag("messages.jpg",:width=>'40px') %>
+  <li><%= link_to messages_link, messages_path %></li>
   </ul>
 </div>
