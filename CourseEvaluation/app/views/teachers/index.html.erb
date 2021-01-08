@@ -18,8 +18,14 @@
     <% @teachers.each do |teacher| %>
       <tr>
         <td><%= teacher.name %></td>
-        <td><%= teacher.college_id %></td>
-        <td><%= teacher.gender_id %></td>
+        <% college = College.find_by(id: teacher.college_id)%>
+        <% if college != nil %>
+          <td><%= college.name %></td>
+        <% end %>
+        <% gender = Gender.find_by(id: teacher.gender_id)%>
+        <% if gender != nil %>
+          <td><%= gender.name %></td>
+        <% end %>
         <td><%= teacher.email %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
