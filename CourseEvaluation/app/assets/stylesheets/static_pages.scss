@@ -42,6 +42,7 @@ form.course_search{
     border-radius: 25px;
     justify-content: center;
     margin:0 auto;
+    margin-top: 100px;
     margin-bottom: 300px;
     width:500px;
     height:50px;
@@ -779,8 +780,27 @@ div
 
 .container {
   *text-align:center;
+  ul {
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  ul li{
+    float:left;
+    *float:none;
+    *display:inline;*zoom:1;
+    font-size: 25px;
+    font-weight: 100;
+    margin-right: auto;
+    border-right: 50px solid #FFFFFF;
+    border-left: 50px solid #FFFFFF;
+  }
 }
-
+.container2 {
+  *text-align:center;
+  margin-top: auto;
+  
 ul {
   display:table;
   margin-left:auto;
@@ -793,8 +813,13 @@ ul li{
   *display:inline;*zoom:1;
   font-size: 25px;
   font-weight: 100;
-  margin-right: 40px;
+  margin-right: auto;
+  border-right: 100px solid #FFFFFF;
+  border-left: 100px solid #FFFFFF;
+  border-top: 50px solid #FFFFFF;
 }
+}
+
 
 
 #anony-nav .nav-right
