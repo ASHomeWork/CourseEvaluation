@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+<<<<<<< HEAD
+#add_messages
+{
+    border: 2px solid;
+    margin:0 aotu;
+    width: 350px; 
+    height: 400px; 
+    position: absolute; left:50%; 
+    top:40%; 
+    transform:translate(-50%,-50%);
+    box-shadow:2px 2px 10px #000;
+=======
 .messages_table {
     border-collapse:collapse;
     margin:0 auto;
@@ -21,4 +33,5 @@
 
 .messages_table tr td:first-child {
     width:125ch;
+>>>>>>> 03486cc41b3c02c65a037c9ce5f8a8242caebca8
 }
