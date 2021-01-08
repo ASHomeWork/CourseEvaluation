@@ -2,6 +2,22 @@
 <html>
   <head>
   </head>
+   <div style="align:right;">
+      <div class="line">
+        <% if current_user.nil? %>
+          <%= link_to '注册', new_user_path %>
+          <div style="margin-left:30px;">
+          <%= link_to '登录', login_path %>
+          </div>
+        <% end %>
+        <% if !current_user.nil? %>
+          <%= render "partial" %>
+          <div style="margin-left:30px;">
+          <%= link_to '消息', messages_path %>
+          </div>
+        <% end %>
+      </div>
+    </div>
    <div id="anony-nav">
     <div class="anony-nav-logo">
       <% logo = image_tag("logo.png",:width=>'200%',:alt => "logo",:class => "logo") %>
@@ -33,19 +49,10 @@
           </li>
         </ul>
       </div>
-      <div class="login">
-        <% if current_user.nil? %>
-          <%= link_to '注册', new_user_path %>
-          <%= link_to '登录', login_path %>
-        <% end %>
-        <% if !current_user.nil? %>
-          <%= render "partial" %>
-          <%= link_to '消息', messages_path %>
-        <% end %>
-      </div>
+      
     </div>  
   </div>
-
+ 
   <div id="demo" class="carousel slide" data-ride="carousel">
     <!-- 指示符 -->
     <ul class="carousel-indicators">
@@ -66,7 +73,7 @@
       </div>
     </div>
   </div>
-     <div class="line">
+    <div class="line">
        <div class="square" id="square">U</div>
        <div class="square">C</div>
        <div class="square">A</div>
