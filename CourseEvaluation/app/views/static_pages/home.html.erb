@@ -18,61 +18,6 @@
         <% end %>
       </div>
     </div>
-   <div id="anony-nav">
-    <div class="anony-nav-logo">
-      <% logo = image_tag("logo.png",:width=>'200%',:alt => "logo",:class => "logo") %>
-      <%= link_to logo, '/'  %>
-    </div>
-    <div class="container">
-      <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
-        <%= f.label "搜一下想看的课程叭" %>
-        <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont %>
-        <button id="btn" class="btn btn-success" type="submit">搜索</button>
-      <% end %>
-    </div>
-    <div class="nav-right">
-      <div class="anony-nav-links">
-        <ul>
-    
-          <li>
-            <%= link_to "课程",   '/courses' %>
-          </li>
-          <li>
-            <%= link_to "学院",   '/colleges' %>
-          </li>
-          <li>
-            <%= link_to "教师",   '/teachers' %>
-          </li>
-          <li>
-            <%= link_to "留言",   '/teachers' %>
-
-          </li>
-        </ul>
-      </div>
-      
-    </div>  
-  </div>
- 
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <!-- 指示符 -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-    <!-- 轮播图片 -->
-    <div class="carousel-inner">
-      <div class="carousel-item active" style="width:100%">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_fjords_wide.jpg" style="object-fit:fill">
-      </div>
-      <div class="carousel-item">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
-      </div>
-      <div class="carousel-item">
-        <img class="img-fluid d-block mx-auto" src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
-      </div>
-    </div>
-  </div>
     <div class="line">
        <div class="square" id="square">U</div>
        <div class="square">C</div>
@@ -95,6 +40,35 @@
        <div class="square">o</div>
        <div class="square">n</div>
    </div>
+   <div id="anony-nav">
+    <div class="nav-right">
+      <div class="anony-nav-links">
+        <ul>
+          <li>
+            <%= link_to "课程",   '/courses' %>
+          </li>
+          <li>
+            <%= link_to "学院",   '/colleges' %>
+          </li>
+          <li>
+            <%= link_to "教师",   '/teachers' %>
+          </li>
+          <li>
+            <%= link_to "留言",   '/teachers' %>
+          </li>
+        </ul>
+      </div>
+    </div>  
+   </div>
+   <div class="bar7">
+   <%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>
+     <div class = "bar1">
+       <span class="icon" ><%= image_tag("search2.ico") %></span>
+       <%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont,placeholder: "搜一下想看的课程叭",autocomplete: "off" %>
+       <input type="submit" value="搜索" id="btn" class="btn" >
+     </div>
+   <% end %>
+  </div>
 <div class="more">
 <h2 style="font-size:20px">热门课程······<%= link_to "更多",'/courses' %></h2>
 </div>
