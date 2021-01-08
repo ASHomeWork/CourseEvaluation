@@ -72,11 +72,32 @@
    <div class="square">n</div>
 </div>
 <div class="more">
-<h2 style="font-size:20px">热门课程······<%= link_to "更多",'/courses' %></h2>
+
+
+<div class="popular_courses">
+<h2 class="p_courses">热门课程······<%= link_to "更多",'/courses' %></h2>
+  <div class="c_line_1">
+    <div>
+      <% course_1 = image_tag("course_1.jpg",:width=>'220px',:alt => "高级软件工程",:class => "show_popu_course") %>
+      <%= link_to course_1, 'courses/1'  %>
+    </div>
+    <div>
+      <% course_2 = image_tag("course_2.jpg",:width=>'220px',:alt => "化学",:class => "show_popu_course") %> 
+      <%= link_to course_2, 'courses/2'  %> 
+    </div>
+  </div>
+  <div class="c_line_2">
+    <div><% course_3 = image_tag("course_3.jpg",:width=>'220px',:alt => "天文",:class => "show_popu_course") %>
+      <%= link_to course_3, 'courses/3'  %>
+    </div>
+    <div><% course_4 = image_tag("course_4.jpg",:width=>'220px',:alt => "数学",:class => "show_popu_course") %>
+      <%= link_to course_4, 'courses/4'  %>
+    </div>
+  </div>
+  
 </div>
-<div class="more">
-<h2 style="font-size:20px">热门评论······<%= link_to "更多",'/reviews' %></h2>
-</div>
+<div class="popular_reviews">
+  <h2 class="p_reviews">热门评论······<%= link_to "更多",'/reviews' %></h2>
 <% if !@user.nil? %>
   <%= link_to '用户资料页', @user %>
 <% end %>
