@@ -581,6 +581,9 @@ body {
     padding-top: 30px;
 }
 
+
+@import "bootstrap";
+
 #header-top
 {
   margin: 0;
@@ -597,28 +600,56 @@ body {
   padding: 0;
 }
 
-.header-top-left   ul {
-
+.header-top-right .header-top-left li
+{
+  padding: 10px;
+  display: inline;
 }
 
-
-.header-top-left   li
+.header-top-left  li
 {
-  padding:10px;
-  margin-left:40px;
   float: left;
-  display: inline;
 }
 
 .header-top-right  li
 {
-  padding: 10px;
-  margin-right:40px;
   float: right;
-  display: inline;
 }
 
 
+#header-top a:visited, .header-top a:hover, .header-top a:active 
+{
+    color: #d5d5d5;
+    background: #888888;
+ }
+
+.header-top-left .header-top-right ul 
+{
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.header-top-left  li a
+{
+  display: inline-block;
+  zoom: 1;
+  padding: 6px 12px 0 20px;
+  height: 28px;
+}
+
+.header-top-right li a
+{
+  display: inline-block;
+  zoom: 1;
+  padding: 6px 12px 0 5px;
+  height: 28px;
+} 
 
 #header-top a:visited, .header-top a:hover, .header-top a:active {
     color: #d5d5d5;
