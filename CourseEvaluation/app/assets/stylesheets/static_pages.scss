@@ -736,16 +736,17 @@ div
 
 #anony-nav .nav-right
 {
-  float:right;
-  height:80px;
+  margin-left:30px;
 }
 
 #anony-nav .anony-nav-links
 {
-  margin-left:100px;
+  float:left;
   height:40px;
-  margin-top:20px;
+  widht:400px;
+  margin-left:250px;
 }
+
 
 #anony-nav .anony-nav-links ul
 {
@@ -774,7 +775,9 @@ div
 {
   float:right;
   padding:0;
-  width:200px;  
+  height:15px;
+  width:200px;
+  margin-right:100px;
 
 }
 
@@ -844,4 +847,54 @@ a:hover{
   right: 10px;
   top: 10px;
 }
+
+.more
+{
+  margin: 10px 60px 20px 60px;
+}
+
+.p_courses
+{
+  font-size:18px;
+  height:20px;
+}
+
+.p_reviews
+{
+  font-size:18px; 
+  height:40px;
+}
+
+.popular_courses
+{
+  float:left;
+  margin: 10px 10px 10px 10px;
+  width:500px;
+  height:600px;
+}
+
+.c_line_1
+{
+  float:left;
+  width:200px;
+  height:200px;
+  margin:10px 0px 10px 10px;
+}
+
+.c_line_2
+{
+  float:left;
+  width:200px;
+  height:200px;
+  margin:10px 0px 10px 10px;
+}
+
+.popular_reviews
+{
+  float:left;
+  margin: 10px 10px 10px 10px;
+  width:500px;
+  height:600px;
+}
+
 
