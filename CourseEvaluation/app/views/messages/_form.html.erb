@@ -11,21 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field" style="">
+  <div class="field">
     <%= form.label :内容  %>
-    <%= form.text_field :content, :style => "width:150px"%>
+    <%= form.text_field :content%>
   </div>
 
   <div class="field">
     <%= form.label :收件人_id %>
-    <%= form.number_field :to_id, :style=>"width:138px" %>
+    <%= form.number_field :to_id %>
   </div>
 
-  <div class="actions">
-  <ul>
-    <li style="display: inline; margin-left:20px"><%= form.submit "发送" ,data: { confirm: '确定发送？' } %></li>
-    <li style="display: inline; margin-left:20px"><%= form.submit "发送给所有人" ,data: { confirm: '确定发送？' } %></li>
-    <li style="display: inline; margin-left:20px"><input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);"></li>
+  <div>
+    <div class="send">
+    <%= form.submit "发送" ,data: { confirm: '确定发送？' } %>
+    </div>
+    <div class="sendtoall">
+    <%= form.submit "发送给所有人" ,data: { confirm: '确定发送？' } %>
+    </div>
   </div>
 
 <% end %>
