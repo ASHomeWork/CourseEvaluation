@@ -1,42 +1,43 @@
 <%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="total">
+    <div class="field">
+      <%= form.label :user_name, "用户名:" %>
+      <%= form.text_field :user_name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :user_name, "用户名" %>
-    <%= form.text_field :user_name %>
-  </div>
+    <div class="field">
+      <%= form.label :password, "密码:" %>
+      <%= form.text_field :password %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password, "密码" %>
-    <%= form.text_field :password %>
-  </div>
+    <div class="field">
+    <%= form.label :password_confirmation, "确认密码:" %>
+    <%= form.text_field :password_confirmation %>
+    </div>
 
-  <div class="field">
-  <%= form.label :password_confirmation, "确认密码" %>
-  <%= form.text_field :password_confirmation %>
-  </div>
+    <div class="field">
+      <%= form.label :email, "邮箱:" %>
+      <%= form.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email, "邮箱" %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="field">
+      <%= form.label :gender_id_1, "男" %>
+      <%= form.radio_button :gender_id, "1" %>
+      <%= form.label :gender_id_2, "女" %>
+      <%= form.radio_button :gender_id, "2" %>
+    </div>
 
-  <div class="field">
-    <%= form.radio_button :gender_id, "1" %>
-    <%= form.label :gender_id_1, "男" %>
-    <%= form.radio_button :gender_id, "2" %>
-    <%= form.label :gender_id_2, "女" %>
+    <div class="sub">
+      <%= form.submit "提交申请",data:{confirm:'确认申请?'} %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit "提交",data:{confirm:'确认申请?'} %>
+  <% if user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
+<% end %> 
 <% end %>

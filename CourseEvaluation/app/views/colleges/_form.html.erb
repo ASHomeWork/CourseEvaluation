@@ -1,15 +1,4 @@
 <%= form_with(model: college, local: true) do |form| %>
-  <% if college.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(college.errors.count, "error") %> prohibited this college from being saved:</h2>
-
-      <ul>
-        <% college.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 <div>
   <div class="field" style="text-align: center;margin-bottom:20px">
     <%= form.label :college_id,"学院名称" %>
@@ -26,4 +15,13 @@
   </ul>
 </div>
 </div>
+<% if college.errors.any? %>
+<div id="error_explanation">
+  <ul>
+    <% college.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <% end %>
