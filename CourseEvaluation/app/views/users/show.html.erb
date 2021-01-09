@@ -5,40 +5,53 @@
       <%= image_tag("pic1.jpg") %>
       <%= @user.user_name %>
     </div>
+<div id="show">
 
     <p id="notice" ><%= notice %></p>
-
-    <p>
-      <strong>用户名:</strong>
-      <%= @user.user_name %>
-    </p>
-
-    <p>
-      <strong>邮箱:</strong>
-      <%= @user.email %>
-    </p>
-
-    <p>
-      <strong>用户权限:</strong>
-      <%= "用户" if @user.power==1 %>
-      <%= "管理员" if @user.power==2 %>
-    </p>
-
-    <p>
-      <strong>性别:</strong>
-      <%= "男" if @user.gender_id==1 %>
-      <%= "女" if @user.gender_id==2 %>
-    </p>
+    <div id="userinfo">
+    
+    <table>
+      <tr>
+        <td class="d1"><strong>用户名:</strong></td>
+        <td><%= @user.user_name %></td>
+      </tr>
+      <tr>
+        <td class="d1"><strong>邮箱:</strong></td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td class="d1"><strong>用户权限:</strong></td>
+        <td><%= "用户" if @user.power==1 %>
+        <%= "管理员" if @user.power==2 %></td>
+      </tr>
+      <tr>
+        <td class="d1"><strong>性别:</strong></td>
+        <td><%= "男" if @user.gender_id==1 %>
+        <%= "女" if @user.gender_id==2 %></td>
+      </tr>
+    </table>
+  </div>
+  <div id="options">
+    
+    <%= link_to '首页', '/' %>
+    <br>
+    <%= link_to '注销用户', @user, method: :delete, data: { confirm: '确定删除?' } %>
+    <br>
+    <%= link_to '修改个人资料', edit_user_path(@user) %> 
+    <br>
     <% if @user.power == 2 %>
       <%= link_to "查看所有用户资料",   users_url %>
     <% end %>
-    <%= link_to '首页', '/' %>
-    <%= link_to '注销用户', @user, method: :delete, data: { confirm: '确定删除?' } %>
-    <%= link_to '修改个人资料', edit_user_path(@user) %> |
+    <br>
     <%= link_to '退出登录', '/logout' %>
+    <br>
+    
+    <br>
   <% else %>
   <%= render "/static_pages/404" %>
   <% end %>
 <% else %>
   <%= render "/static_pages/404" %>
 <% end %>
+  </div>
+</div>

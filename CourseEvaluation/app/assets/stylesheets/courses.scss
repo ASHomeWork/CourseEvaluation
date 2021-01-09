@@ -1374,3 +1374,63 @@ body a {
 
 //打分
 
+
+#edit_course
+{
+    border: 2px solid;
+    margin:0 aotu;
+    width: 350px; 
+    height: 450px; 
+    position: absolute; left:50%; 
+    top:40%; 
+    transform:translate(-50%,-50%);
+    box-shadow:2px 2px 10px #000;
+    text-align:center;
+}
+
+#edit_course .field
+{
+    text-align:left;
+    padding-left:5px;
+    margin:0 0 20px 40px;
+}
+
+
+
+
+#edit_course label
+{
+    text-align:left;
+    padding:0;
+    font-size:13px;
+    margin:0;
+    width:60px;
+}
+
+#edit_course input[type="text"] {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 180px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+}
+
+
+#edit_course .gen_sel select {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 180px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+}
+
+
+#edit_course input[type=submit]
+{
+    width: 90px;
+    height: 25px;
+}

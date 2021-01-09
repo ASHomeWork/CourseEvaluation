@@ -1,6 +1,13 @@
-<h1 align="center">编辑课程信息</h1>
 
+<div id=edit_course>
+<br><br>
+<h1 align="center">编辑课程信息</h1>
+<br><br>
 <%= render 'form', course: @course %>
 
-<%= link_to '课程详情页', @course %> |
+<div id=return>
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+</div>
+<br>
+<%= link_to '课程详情页', @course %> 
+</div>
