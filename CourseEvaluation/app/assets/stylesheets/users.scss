@@ -74,3 +74,37 @@ input[type="radio"] {
     left: 1400px;
     top: 500px;
 }
+
+#show
+{
+    border: 2px solid;
+    margin:0 aotu;
+    width: 350px; 
+    height: 270px; 
+    position: absolute; left:50%; 
+    top:40%; 
+    transform:translate(-50%,-50%);
+    box-shadow:2px 2px 10px #000;
+    text-align:center;
+
+}
+
+#userinfo
+{
+    text-align:center;
+    font-size:15px;
+}
+
+#userinfo table
+{
+    margin:40px 40px 20px 40px;
+    text-align:center;
+    font-size:15px;
+}
+
+#userinfo .d1
+{
+    width:110px;
+    text-align:left;
+    font-size:15px;
+}
