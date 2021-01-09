@@ -1087,6 +1087,7 @@ span.mii-stars {
 
 #add_course label
 {
+    text-align:left;
     padding:0;
     font-size:13px;
     margin:0;
@@ -1101,6 +1102,12 @@ span.mii-stars {
     width: 150px;
     font-size: 13px;
     font-family: "Microsoft soft";
+}
+
+#add_course input[type=submit]
+{
+    width: 90px;
+    height: 25px;
 }
 
 //bg
@@ -1362,4 +1369,8 @@ body a {
   color: #16a085;
 }
 
+
 //打分
+
+//打分
+
