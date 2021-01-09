@@ -15,4 +15,11 @@
  */
  @import "bootstrap/dist/css/bootstrap";
 
- 
+ form.user {
+    input#user_user_name{width:200px;background-color: brown;}
+    input#user_password_confirmation{width:200px;}
+    input#user_password { width: 100px; }
+    input#user_email { width:200px; }
+    input#user_gender_id {width:200px}
+  }
+

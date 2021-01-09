@@ -752,6 +752,32 @@ div
 }
 
 
+#anony-nav
+{
+  padding-top:20px;
+  width:100%;
+  height:150px;
+}
+
+#anony-nav .anony-nav-logo
+{
+  float: left;
+  margin-right:50px;
+  margin-left:60px;
+  display: inline;
+  width:5%;
+
+}
+
+#anony-nav .container
+{
+  float: left;
+  margin-left:70px;
+  margin-top:20px;
+  display: inline;
+  width:20%;
+}
+
 .container {
   *text-align:center;
   ul {
@@ -812,6 +838,50 @@ ul li{
   }
 }
 
+
+
+#anony-nav .nav-right
+{
+  float:right;
+  margin-right:60px;
+}
+
+#anony-nav .nav-right
+{
+  margin-left:30px;
+}
+
+#anony-nav .anony-nav-links
+{
+  float:left;
+  height:40px;
+  width:400px;
+  margin-left:250px;
+}
+
+
+#anony-nav .anony-nav-links ul
+{
+  margin-right:80px;
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+#anony-nav .anony-nav-links li
+{ 
+  margin-top:20px ;
+  margin-left:40px;
+  float: left;
+  display: inline;
+}
+
+#anony-nav .anony-nav-links li a
+{
+  display: block;
+  width: 40px;
+  font-size: 18px;
+}
 
  .login
 {

@@ -1,4 +1,13 @@
 <%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> 
   <div class="total">
     <div class="field">
       <%= form.label :user_name, "用户名:" %>
@@ -31,13 +40,4 @@
       <%= form.submit "提交申请",data:{confirm:'确认申请?'} %>
     </div>
   </div>
-  <% if user.errors.any? %>
-  <div id="error_explanation">
-    <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %> 
 <% end %>
