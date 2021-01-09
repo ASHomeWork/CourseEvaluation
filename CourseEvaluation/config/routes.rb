@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/courses/select_with_ajax1', to: 'courses#select_with_ajax1'
   post '/courses/select_with_logged', to: 'courses#select_with_logged'
   post '/courses/create_comment' => 'courses#create_comment'
+  post '/select_with_ajax', to: 'courses#select_with_ajax'
+  post '/select_with_ajax1', to: 'courses#select_with_ajax1'
 
   get '/select_with_logged', to: 'courses#select_with_logged'
 
