@@ -64,16 +64,29 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(course_params)
-
-    respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: '课程创建成功' }
-        format.json { render :show, status: :created, location: @course }
+        redirect_to @course
       else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        if @course.name == ""
+          flash.now[:name] = "名字非空"
+          render :action=>'new' 
+        elsif Course.find_by(name: @course.name)
+          flash.now[:rename] = "名字已存在"
+          render :action=>'new' 
+        elsif @course.name.length < 2
+          flash.now[:short] = "名字太短"
+          render :action=>'new'
+        elsif @course.name.length > 50
+          flash.now[:long] = "名字太长"
+          render :action=>'new'   
+        elsif @course.major_id == nil
+          flash.now[:major] = "请选择专业"
+          render :action=>'new' 
+        elsif @course.teacher_id == nil
+          flash.now[:teacher] = "请选择老师"
+          render :action=>'new' 
+        end
       end
-    end
   end
 
   # PATCH/PUT /courses/1
