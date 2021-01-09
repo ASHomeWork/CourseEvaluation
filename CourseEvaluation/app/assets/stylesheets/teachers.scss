@@ -8,7 +8,7 @@
 	margin:0 aotu;
 	text-align:center;
 	width: 350px; 
-	height: 350px; 
+	height: 400px; 
 	position: absolute; left:50%; 
 	top:40%; 
 	transform:translate(-50%,-50%);
@@ -25,12 +25,30 @@
 #add_teacher label
 {
     font-size:13px;
-    margin:0;
     padding:0;
+    margin:0 5px 0 0;
     width:50px;
 }
 
+#add_teacher input[type=submit]
+{
+    width: 90px;
+    height: 25px;
+}
+
 #add_teacher input[type="text"] {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 150px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+    margin:0;
+    padding:0;
+}
+
+#add_teacher  input[type="collection"] {
     vertical-align: top;
     border-radius: 3px;
     outline-style: none;
