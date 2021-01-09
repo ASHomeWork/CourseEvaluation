@@ -818,6 +818,11 @@ ul li{
   border-left: 100px solid #FFFFFF;
   border-top: 50px solid #FFFFFF;
 
+}
+}
+
+.ok{
+  margin-top: 10px;
   ul {
     display:table;
     margin-left:auto;
@@ -833,52 +838,6 @@ ul li{
     border-left: 5px solid #FFFFFF;
   }
 }
-
-
-
-#anony-nav .nav-right
-{
-  float:right;
-  margin-right:60px;
-}
-
-#anony-nav .nav-right
-{
-  margin-left:30px;
-}
-
-#anony-nav .anony-nav-links
-{
-  float:left;
-  height:40px;
-  width:400px;
-  margin-left:250px;
-}
-
-
-#anony-nav .anony-nav-links ul
-{
-  margin-right:80px;
-  list-style-type: none;
-  margin-top: 10px;
-  padding: 0px;
-}
-
-#anony-nav .anony-nav-links li
-{ 
-  margin-top:20px ;
-  margin-left:40px;
-  float: left;
-  display: inline;
-}
-
-#anony-nav .anony-nav-links li a
-{
-  display: block;
-  width: 40px;
-  font-size: 18px;
-}
-
  .login
 {
   float:right;
