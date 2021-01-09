@@ -2,41 +2,107 @@
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<%# bg %>
+<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="Gradient1" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="34s" values="0%;1%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(255, 0, 255, 1)" />
+        <stop offset="100%" stop-color="rgba(255, 0, 255, 0)" />
+      </radialGradient>
+       <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="23.5s" values="0%;1%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(255, 255, 0, 1)" />
+        <stop offset="100%" stop-color="rgba(255, 255, 0, 0)" />
+      </radialGradient>
+      <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="21.5s" values="0%;1%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(0, 255, 255, 1)" />
+        <stop offset="100%" stop-color="rgba(0, 255, 255, 0)" />
+      </radialGradient>
+      
+      <radialGradient id="Gradient4" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="23s" values="0%;5%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(0, 255, 0, 1)" />
+        <stop offset="100%" stop-color="rgba(0, 255, 0, 0)" />
+      </radialGradient>
+       <radialGradient id="Gradient5" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="24.5s" values="0%;5%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(0,0,255, 1)" />
+        <stop offset="100%" stop-color="rgba(0,0,255, 0)" />
+      </radialGradient>
+      <radialGradient id="Gradient6" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+        <animate attributeName="fx" dur="25.5s" values="0%;5%;0%" repeatCount="indefinite" />
+        <stop offset="0%" stop-color="rgba(255,0,0, 1)" />
+        <stop offset="100%" stop-color="rgba(255,0,0, 0)" />
+      </radialGradient>
+    </defs>
+  
+     <!--<rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient4)">
+      <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient5)">
+      <animate attributeName="x" dur="23s" values="0%;-25%;0%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="24s" values="25%;-25%;25%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite"/>
+    </rect>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient6)">
+      <animate attributeName="x" dur="25s" values="-25%;0%;-25%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="26s" values="0%;-25%;0%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite"/>
+    </rect>-->
+    
+    <rect x="0" y="0" width="200%" height="200%" fill="url(#Gradient1)">
+      <animate attributeName="x" dur="20s" values="0%;50%;0%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="21s" values="0%;50%;0%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="17s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="100%" height="200%" fill="url(#Gradient2)">
+      <animate attributeName="x" dur="23s" values="50%;-25%;50%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="24s" values="50%;-25%;50%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="18s" repeatCount="indefinite"/>
+    </rect>
+      <rect x="0" y="0" width="100%" height="200%" fill="url(#Gradient3)">
+      <animate attributeName="x" dur="25s" values="0%;75%;0%" repeatCount="indefinite" />
+      <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="19s" repeatCount="indefinite"/>
+    </rect>
+  
+
+    
+  </svg>
+<%# bg %>
+<div class="child">
 <meta charset="utf-8">
     <h1>课程详情<br />
     <small>Course Detail</small></h1>
 <div class="outside">
-    <div class="mii-container" style="margin:10px;">
-        <div class="mii-container-top">
-            <img src="/assets/ucas.png" class="flag">
-            <span class="mii-gold-stars">
-			<span class="mii-gold-star first"></span>
-			<span class="mii-gold-star second"></span>
-            <span class="mii-gold-star third"></span>
-			<span class="mii-gold-star fourth"></span>
-			<span class="mii-gold-star fifth"></span>
-        	</span>
-		</div>
-		<div class="mii-container-bottom">
-				<span class="mii-name">
-				<strong>Name:</strong>
+    <div class="content">
+		<div class="card" >
+				<div class="front">
 				<%= @course.name %>
-				</p>
-				</span>
-				<p>
-				<strong>Major:</strong>
-				<%= @course.major.name %>
-				</p>
-
-				<p>
-				<strong>Year:</strong>
-				<%= @course.year %>
-				</p>
-
-				<%= link_to '修改课程', edit_course_path(@course) %> |
-				<input type = "submit" class="btn btn-primary btn-xs" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+				</div>
+				<div class="back">
+				<div>
+					<strong>Name:</strong>
+					<%= @course.name %>
+					<p>
+					<strong>Major:</strong>
+					<%= @course.major.name %>
+					</p>
+					<p>
+					<strong>Year:</strong>
+					<%= @course.year %>
+					</p>
+					<%= button_to '修改课程', edit_course_path(@course), :method => :get, class:"button" %>
+					<input type = "submit" class="button" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+				</div>
+				</div>
 		</div>
-    </div>
+	</div>
+	
 <div class="insider">
 <div class="comments-container">
     <h1>评一评</h1>
@@ -147,7 +213,7 @@
     </ul>
 </div>
 </div>
-<div style="margin-top:10px;margin-left:20px">
+<div class="inner-pannel">
 <div class="panel panel-success">
 	<div class="panel-heading">
         <h3 class="panel-title">发表评论</h3>
@@ -175,11 +241,6 @@
 </div>
 </div>
 </div>
-
-
-
-
-
 
 <div>
 <script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
@@ -223,7 +284,7 @@
 			<path class="shadow" d="M18.7022469,29.7633426 L29.1611722,33.6861584 C28.8859085,33.8576358 28.5650147,33.9672494 28.2172657,33.993502 C27.9437428,34.0141511 27.6687736,33.9809301 27.4085205,33.8957918 L18.6506147,31.0307612 C18.2281197,30.8925477 17.7713439,30.8925477 17.3488489,31.0307612 L8.59094317,33.8957918 C7.98083887,34.0953792 7.34281791,33.9989813 6.83864817,33.6859784 L17.2977531,29.7633426 C17.7505234,29.5935537 18.2494766,29.5935537 18.7022469,29.7633426 Z"></path>
 			</svg>
 </div>
-
+</div>
 <script>
 $('.rating ul li').on('click', function() {
 
@@ -257,6 +318,6 @@ $('.rating ul li').on('click', function() {
 
     }
 
-})
+});
 </script>
 
