@@ -3,107 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "font-awesome";
 @import "bootstrap";
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.rating {
-    text-align: center;
-    margin-top: 120px;
-    position: relative;
-    width: 50%;
-    float: left;
-}
-.hidden {
-    opacity: 0;
-}
-.star {
-    display: inline-block;
-    margin: 5px;
-    font-size: 30px;
-    color: whitesmoke;
-    position: relative;
-}
-.star.animate {
-    -webkit-animation: stretch-bounce 0.5s ease-in-out;
-}
-.star.hidden {
-    opacity: 0;
-}
-.full:before {
-    font-family: fontAwesome;
-    display: inline-block;
-    content: "\f005";
-    position: relative;
-    float: right;
-    z-index: 2;
-}
-.half:before {
-    font-family: fontAwesome;
-    content: "\f089";
-    position: absolute;
-    float: left;
-    z-index: 3;
-}
-.star-colour {
-    color: #ffd700;
-}
 
-.selected:before {
-    font-family: fontAwesome;
-    display: inline-block;
-    content: "\f005";
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    opacity: 1;
-    z-index: 1;
-}
-.selected.pulse:before {
-    -webkit-transform: scale(3);
-    -ms-transform: scale(3);
-    opacity: 0;
-}
-.selected.is-animated:before {
-    transition: 1s ease-out;
-}
-.score {
-    font-family: arial;
-    font-size: 20px;
-    color: green;
-    margin-top: 20px;
-    margin-left: 50px;
-}
-.score-rating {
-    vertical-align: sup;
-    top: -5px;
-    position: relative;
-    font-size: 150%;
-}
-.total {
-    vertical-align: sub;
-    top: 0px;
-    position: relative;
-    font-size: 100%;
-}
-.average {
-    font-family: arial;
-    font-size: 20px;
-    color: indianred;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.average .score-average {
-    padding-top: 30px;
-}
+
+
 a {
     color: #03658c;
     text-decoration: none;
@@ -638,11 +540,14 @@ span.mii-stars {
 
  .outside{
     display: grid;
-    grid-template-columns: 400px 1000px;
+    grid-template-columns: 400px 1300px;
     grid-template-rows: 400px 400px;
     grid-gap: 20px 20px;
  }
-
+ .inner-pannel{
+   margin:10px;
+   width: 545px;
+ }
  .insider{
     overflow-y:scroll;
     grid-column-start: 2;
@@ -1367,6 +1272,7 @@ svg {
   position: relative;
   transform-style: preserve-3d;
   transition: 300ms ease;
+  margin: 7px;
 }
 .button:before {
   transition: 300ms ease;
@@ -1397,3 +1303,63 @@ svg {
   transform: translateZ(-20px);
   top: 12px;
 }
+
+//打分
+.star-rating {
+  font-family: 'FontAwesome';
+  margin: 50px auto;
+}
+.star-rating > fieldset {
+  border: none;
+  display: inline-block;
+}
+.star-rating > fieldset:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
+}
+.star-rating > fieldset:not(:checked) > label {
+  float: right;
+  width: 1em;
+  padding: 0 .05em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  color: #16a085;
+}
+.star-rating > fieldset:not(:checked) > label:before {
+  content: '\f006  ';
+}
+.star-rating > fieldset:not(:checked) > label:hover,
+.star-rating > fieldset:not(:checked) > label:hover ~ label {
+  color: #1abc9c;
+  text-shadow: 0 0 3px #1abc9c;
+}
+.star-rating > fieldset:not(:checked) > label:hover:before,
+.star-rating > fieldset:not(:checked) > label:hover ~ label:before {
+  content: '\f005  ';
+}
+.star-rating > fieldset > input:checked ~ label:before {
+  content: '\f005  ';
+}
+.star-rating > fieldset > label:active {
+  position: relative;
+  top: 2px;
+}
+body {
+  background: #262829;
+  color: #95a5a6;
+  font-family: 'Raleway';
+  text-align: center;
+}
+body p {
+  font-size: 1.6em;
+  margin: auto;
+  width: 80%;
+}
+body a {
+  color: #16a085;
+}
+
+//打分
