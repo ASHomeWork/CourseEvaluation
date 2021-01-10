@@ -11,30 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field" style="margin-bottom:20px">
+  <div class="field">
     <%= form.label :name,"姓名" %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field" style="margin-bottom:20px">
+  <div class="field">
     <%= form.label :college_id,"学院" %>
     <%= form.collection_select :college_id, College.order(:name), :id, :name , { :include_blank => '选择学院'} ,:style=>"border: 1px solid #ccc;
     width: 150px;font-size: 13px;"%>
   </div>
 
-  <div class="field" style="margin-bottom:20px">
+  <div class="field">
     <%= form.label :email,"邮箱" %>
     <%= form.text_field :email %>
   </div>
 
-  <div class="field" style="margin-bottom:20px; margin-left:40px">
+  <div class="field">
+    <div class="choose_gender">
     <%= form.radio_button :gender_id, "1" %>
     <%= form.label :gender_id_1, "男老师"  %>
     <%= form.radio_button :gender_id, "2" %>
     <%= form.label :gender_id_2, "女老师" %>
+    </div>
   </div>
   <div class="btn">
     <%= form.submit "提交", data: { confirm: '确定添加？' }%>
   </div>
-</div>
+
 <% end %>
