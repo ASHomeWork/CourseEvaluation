@@ -1,7 +1,10 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <div id="add_major">
 <br><br>
 <h1 align="center">添加专业</h1>
 <br><br>
 <%= render 'form', major: @major %>
-
+<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+</div>
 

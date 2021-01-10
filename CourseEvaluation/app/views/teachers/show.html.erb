@@ -1,26 +1,31 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @teacher.name %>
-</p>
-
-<p>
-  <strong>College:</strong>
-  <%= @teacher.college_id %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @teacher.gender_id %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @teacher.email %>
-</p>
-
+<div id="show">
+	<div id="show_table">
+		<table>
+			<tr>
+				<td class="d1"><strong>姓名:</strong></td>
+		  		<td><%= @teacher.name %></td>
+		  	</tr>
+		    <tr>
+		        <td class="d1"><strong>学院:</strong></td>
+		        <td><%= @teacher.college_id %></td>
+		    </tr>
+		    <tr>
+		        <td class="d1"><strong>性别:</strong></td>
+		        <td><%= @teacher.gender_id %></td>
+		    </tr>
+		    <tr>
+		        <td class="d1"><strong>邮箱:</strong></td>
+		        <td><%= @teacher.email %></td>
+		    </tr>
+		</table>
+	</div>
+<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+<div>
 <%if !current_user.nil? && current_user.power == 2 %>
   <%= link_to '修改教师信息', edit_teacher_path(@teacher) %>
 <% end %>
-<input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+</div>

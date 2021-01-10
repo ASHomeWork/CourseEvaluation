@@ -1,14 +1,23 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
+<div id="show">
 
-<p>
-  <strong>Course:</strong>
-  <%= @grade.course_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @grade.user_id %>
-</p>
-
+    <div id="show_table">
+    
+    <table>
+      	<tr>
+		  	<td class="d1"><strong>课程:</strong></td>
+		  	<td><%= @grade.course_id %></td>
+		</tr>
+  		<tr>
+  			<td class="d1"><strong>User:</strong></td>
+  			<td><%= @grade.user_id %></td>
+  		</tr>
+  	</table>
+  </div>
+<div>
 <%= link_to 'Edit', edit_grade_path(@grade) %> |
 <%= link_to 'Back', grades_path %>
+</div>
+</div>

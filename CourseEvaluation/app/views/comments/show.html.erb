@@ -1,19 +1,25 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @comment.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @comment.user_id %>
-</p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @comment.course_id %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<div id="show">
+<div id="show_table">
+    <table>
+      	<tr>
+		  	<td class="d1"><strong>评论内容:</strong></td>
+  			<td><%= @comment.content %></td>
+  		</tr>
+  		<tr>
+  			<td class="d1"><strong>User:</strong></td>
+  			<td><%= @comment.user_id %></td>
+  		</tr>
+  		<tr>
+  			<td class="d1"><strong>Course:</strong></td>
+  			<td><%= @comment.course_id %></td>
+  		</tr>
+  	</table>
+  </div>
+<div>
 <%= link_to 'Back', comments_path %>
+</div>
+</div>

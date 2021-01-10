@@ -1,0 +1,18 @@
+<div id="nav-body">
+	<div class="logo">
+		<%= image_tag("logo.png", :height => '70', :width => '150') %>
+	</div>
+	<div class="options">
+		<%= link_to "首页",  '/home'%>
+		<%= link_to "课程",  '/courses' %>
+		<%= link_to "热评", '/comments' %>
+	</div>
+	<div class="nav-search">
+	<%= search_form_for @q, url: search_courses_path, html: { method: :post } do |f| %>	
+		<div class="inp">
+		<%= f.search_field :name_or_year_or_major_name_or_teacher_name_or_major_college_name_cont, name: "q", size: "22",maxlength: "60", autocomplete: "off", placeholder: "搜索你感兴趣的课程" %>
+		</div>
+	<% end %>
+
+	</div>
+</div>

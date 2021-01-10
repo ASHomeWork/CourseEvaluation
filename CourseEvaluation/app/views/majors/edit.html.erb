@@ -1,6 +1,15 @@
-<h1>Editing Major</h1>
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 
+<div id="edit_major">
+<br><br>
+<h1>修改专业信息</h1>
+<br>
 <%= render 'form', major: @major %>
 
-<%= link_to 'Show', @major %> |
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+
+<div>
+<%= link_to '查看专业信息', @major %> 
+</div>
+</div>

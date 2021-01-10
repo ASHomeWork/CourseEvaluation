@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    if
+    
     @comments = Comment.all
   end
 
@@ -73,3 +73,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:content, :user_id, :course_id)
     end
+  end
