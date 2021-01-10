@@ -34,8 +34,9 @@ courses=Course.create([{name: 'Advanced Software Engineering', major: majors.fir
     {name: 'Calculus', major: majors[1], teacher: teachers[1], year: Date.today},
     {name: 'Mechanics', major: majors[2], teacher: teachers[2], year: Date.today}])
 
-comments=Comment.create([{content: 'I love it', user: users.second, course: courses.first},
-                        {content: 'Fantastic!', user: users.last, course: courses.first}])
+comments=Comment.create([{content: '老师上课寓教于乐，课程作业可以学到很多东西。', user: users.second, course: courses.first},
+                        {content: '魏老师上课好帅！', user: users.last, course: courses.first},
+                        {content: '认真学习考试很简单，拿高分较难。', user: users[2], course: courses.first},])
 
 reviews=Review.create([{content: 'Agreed!', comment: comments.first, user: users.third},
                         {content: '@student2 3Q!', comment: comments.first, user: users.second}])
