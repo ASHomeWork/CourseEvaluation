@@ -1,9 +1,13 @@
 <% if !current_user.nil?&&request.url.include?('users/'+current_user[:id].to_s+'/edit') then %>
+<div id="edit_user">
+<br><br>
 <h1>修改用户资料</h1>
+<br>
 	<%= render 'form', user: @user %>
 	<%= link_to '资料页', @user %> |
 	<%= link_to '返回', users_path %>
 <% else %>
 	<%= render "/static_pages/404" %>
 <% end %>
+</div>
 
