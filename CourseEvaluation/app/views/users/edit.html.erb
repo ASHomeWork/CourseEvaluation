@@ -1,3 +1,5 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <% if !current_user.nil?&&request.url.include?('users/'+current_user[:id].to_s+'/edit') then %>
 <div id="edit_user">
 <br><br>

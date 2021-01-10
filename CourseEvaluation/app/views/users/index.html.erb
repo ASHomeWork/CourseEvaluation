@@ -1,5 +1,7 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
+<div id="content">
 <% if !current_user.nil?&&current_user[:power]==2 then %>
-  <h1>用户资料页</h1>
   <p id="notice"><%= notice %></p>
   <h1>用户资料页</h1>
   <table class="table table-hover" id="course_table" data-card-view="true">
@@ -41,3 +43,4 @@
 <% else %>
   <%= render "/static_pages/404" %>
 <% end %>
+</div>

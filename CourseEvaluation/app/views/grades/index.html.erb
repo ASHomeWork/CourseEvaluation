@@ -1,8 +1,10 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
-
+<div id="content">
 <h1>Grades</h1>
 
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Course</th>
@@ -27,3 +29,4 @@
 <br>
 
 <%= link_to 'New Grade', new_grade_path %>
+</div>

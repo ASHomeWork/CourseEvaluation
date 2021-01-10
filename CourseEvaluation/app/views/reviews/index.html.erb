@@ -1,8 +1,10 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
-
+<div id="content">
 <h1>Reviews</h1>
 
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Content</th>
@@ -29,4 +31,7 @@
 <br>
 
 <%= link_to '首页', '/'%>
+<div>
 <%= link_to 'New Review', new_review_path %>
+</div>
+</div>

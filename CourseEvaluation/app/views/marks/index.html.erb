@@ -1,8 +1,10 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
-
+<div id="content">
 <h1>Marks</h1>
 
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Score</th>
@@ -27,5 +29,7 @@
 </table>
 
 <br>
-
+<div>
 <%= link_to 'New Mark', new_mark_path %>
+</div>
+</div>

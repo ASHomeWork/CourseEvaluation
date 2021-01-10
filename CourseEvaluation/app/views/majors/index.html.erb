@@ -1,8 +1,10 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
-
+<div id="content">
 <h1>Majors</h1>
 
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Name</th>
@@ -27,3 +29,4 @@
 <br>
 
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+</div>

@@ -1,14 +1,22 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @major.name %>
-</p>
+<div id="show">
 
-<p>
-  <strong>College:</strong>
-  <%= @major.college_id %>
-</p>
-
-<%= link_to 'Edit', edit_major_path(@major) %> |
+    <div id="show_table">
+    
+    <table>
+      	<tr>
+		  	<td class="d1"><strong>专业名称:</strong></td>
+			<td><%= @major.name %></td>
+		</tr>
+		<tr>
+			<td class="d1"><strong>所属学院:</strong></td>
+  			<td><%= @major.college_id %></td>
+  		</tr>
+  	</table>
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+<div>
+<%= link_to 'Edit', edit_major_path(@major) %>
+</div>

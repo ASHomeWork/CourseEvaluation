@@ -1,9 +1,11 @@
-<%= render "/layouts/header" %>
-<p id="notice"><%= notice %></p>
 
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
+<p id="notice"><%= notice %></p>
+<div id="content">
 <h1>Teachers</h1>
 
-<table>
+<table class="table table-hover" id="course_table" data-card-view="true">
   <thead>
     <tr>
       <th>Name</th>
@@ -37,5 +39,9 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+<div>
+<%= link_to 'New Teacher', new_teacher_path %>
+</div>
+</div>

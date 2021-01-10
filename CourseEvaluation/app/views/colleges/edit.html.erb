@@ -1,6 +1,14 @@
-<h1>Editing College</h1>
-
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
+<div id="edit_college">
+<br><br>
+<h1>编辑学院信息</h1>
+<br>
 <%= render 'form', college: @college %>
 
-<%= link_to 'Show', @college %> |
+ 
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+<div>
+<%= link_to '查看学院信息', @college %>
+</div>
+</div>

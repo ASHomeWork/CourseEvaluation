@@ -1,3 +1,5 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <% if !current_user.nil? %>
   <% if request.url.include?('users/'+current_user[:id].to_s) || current_user[:id]==1 then %>
     <% provide(:title, @user.user_name) %>
@@ -5,10 +7,11 @@
       <%= image_tag("pic1.jpg") %>
       <%= @user.user_name %>
     </div>
-<div id="show">
-
     <p id="notice" ><%= notice %></p>
-    <div id="userinfo">
+    
+  <div id="show">
+
+    <div id="show_table">
     
     <table>
       <tr>

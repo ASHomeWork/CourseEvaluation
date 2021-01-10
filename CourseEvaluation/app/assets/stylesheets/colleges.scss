@@ -1,3 +1,4 @@
+
 // Place all the styles related to the Colleges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
@@ -15,11 +16,27 @@
 	width: 350px; 
 	height: 250px; 
 	position: absolute; left:50%; 
-	top:40%; 
+	top:400px; 
 	transform:translate(-50%,-50%);
 	box-shadow:2px 2px 10px #000;
 }
 */
+#content
+{
+    width:80%;
+    text-align:center;
+    margin:0 10% 0 10%;
+}
+
+#content .title
+{
+    font-size:20px;
+    height:5%;
+    width:100%;
+    color:black;
+    text-align:center;
+}
+
 
 #add_college
 {
@@ -28,7 +45,7 @@
     width: 350px; 
     height: 270px; 
     position: absolute; left:50%; 
-    top:40%; 
+    top:400px; 
     transform:translate(-50%,-50%);
     box-shadow:2px 2px 10px #000;
     text-align:center;
@@ -72,5 +89,75 @@
 {
     width: 90px;
     height: 25px;
+}
+
+
+#edit_college
+{
+    border: 2px solid;
+    margin:0 aotu;
+    width: 350px; 
+    height: 300px; 
+    position: absolute; left:50%; 
+    top:400px;
+    transform:translate(-50%,-50%);
+    box-shadow:2px 2px 10px #000;
+    text-align:center;
+}
+
+#edit_college .field
+{
+    text-align:left;
+    padding-left:5px;
+    margin:0 0 15px 40px;
+    width:250px;
+}
+
+#edit_college .choose_gender
+{
+    margin:0 0 0 60px;
+}
+
+
+#edit_college label
+{
+    text-align:left;
+    padding:0;
+    font-size:13px;
+    margin:0 0 10px 0;
+    width:60px;
+}
+
+#edit_college input[type="text"] {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 180px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+}
+
+#edit_college .actions
+{
+    background:transparent;
+}
+
+#edit_college .gen_sel select {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 180px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+}
+
+
+#edit_college input[type=submit]
+{
+    width: 90px;
+    height: 25px;
+    margin:0 0 5px 0;
 }
 

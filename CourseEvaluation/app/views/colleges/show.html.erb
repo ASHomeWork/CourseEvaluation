@@ -1,9 +1,16 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @college.name %>
-</p>
-
-<%= link_to 'Edit', edit_college_path(@college) %> |
+<div id="show">
+<div id="show_table">
+    <table>
+      	<tr>
+		  	<td class="d1"><strong>学院名称:</strong></td>
+  			<td><%= @college.name %></td>
+  		</tr>
+  	</table>
 <input type = "submit" name="Submit" value="返回" onclick="javascript:window.history.back(-1);">
+<div>
+	<%= link_to 'Edit', edit_college_path(@college) %>
+</div>
+</div>

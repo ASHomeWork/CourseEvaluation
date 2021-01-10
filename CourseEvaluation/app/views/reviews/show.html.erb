@@ -1,19 +1,27 @@
+<%= render "/layouts/header" %>
+<%= render "/layouts/nav" %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @review.content %>
-</p>
+<div id="show">
 
-<p>
-  <strong>Comment:</strong>
-  <%= @review.comment_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @review.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
+    <div id="show_table">
+    
+    <table>
+      	<tr>
+		  	<td class="d1"><strong>回复内容:</strong></td>
+		  	<td><%= @review.content %></td>
+	  	</tr>
+		<tr>
+        	<td class="d1"><strong>主楼评论:</strong></td>
+  			<td><%= @review.comment_id %></td>
+  		</tr>
+  		<tr>
+        <td class="d1"><strong>发言用户:</strong></td>
+        <td><%= @review.user_id %></td>
+    	</tr>
+    </table>
+	</div>
+<div>
 <%= link_to 'Back', reviews_path %>
+</div>
+</div>
