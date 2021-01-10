@@ -3,7 +3,8 @@ class User < ApplicationRecord
     belongs_to :gender
     has_many :comments
     has_many :marks
-
+    has_many :likes, through: :comments,dependent: :destroy 
+    
     attr_accessor :remember_token
 
     validates :user_name, presence: true
