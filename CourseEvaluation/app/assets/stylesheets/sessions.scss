@@ -1,3 +1,80 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#login
+{
+	border: 2px solid;
+	margin:0 aotu;
+	text-align:center;
+	width: 350px; 
+	height: 400px; 
+	position: absolute; left:50%; 
+	top:40%; 
+	transform:translate(-50%,-50%);
+	box-shadow:2px 2px 10px #000;
+}
+
+#login .field
+{
+	text-align:left;
+    padding:0 0 15px 80px;
+    margin:0;
+    width:350px;
+}
+
+
+#login  .checkbox
+{
+	margin:0 0 0 40px;
+}
+
+#login  .checkbox input
+{
+	text-align:center;
+	margin:4px 0 0 20px;
+   
+}
+
+
+#login .choose_gender
+{
+    margin:0 0 0 40px;
+}
+
+#login .field label
+{
+	text-align:left;
+    font-size:13px;
+    padding:0;
+    margin:0 5px 0 0px;
+    width:200px;
+    display:inline;
+}
+
+#login input[type=submit]
+{
+    width: 90px;
+    height: 25px;
+    display:inline;
+}
+
+#login input {
+    vertical-align: top;
+    border-radius: 3px;
+    outline-style: none;
+    border: 1px solid #ccc;
+    width: 150px;
+    font-size: 13px;
+    font-family: "Microsoft soft";
+    margin:0;
+    padding:0;
+    display:inline;
+}
+
+
+#login .btn
+{
+	margin:0 0 0 20px;
+	
+}
